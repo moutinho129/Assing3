@@ -1,0 +1,53 @@
+\hypertarget{task_8h}{}\doxysection{include/task.h File Reference}
+\label{task_8h}\index{include/task.h@{include/task.h}}
+
+
+Definição da \mbox{\hyperlink{structRTDB}{RTDB}} (Real-\/\+Time Data\+Base) e funções utilitárias para tasks.  
+
+
+{\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
+Include dependency graph for task.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRTDB}{RTDB}}
+\begin{DoxyCompactList}\small\item\em Estrutura da base de dados partilhada entre tasks (\mbox{\hyperlink{structRTDB}{RTDB}}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRTDB}{RTDB}} \mbox{\hyperlink{task_8h_a5047ee7b772d7f5f69a1cd0ef2f83f32}{db}}
+\item 
+struct k\+\_\+mutex \mbox{\hyperlink{task_8h_a6d2bc6e8daf73029e362c7456a9b5e7d}{db\+\_\+lock}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definição da \mbox{\hyperlink{structRTDB}{RTDB}} (Real-\/\+Time Data\+Base) e funções utilitárias para tasks. 
+
+Define a estrutura partilhada entre tasks para sincronização do estado do sistema. Inclui variáveis globais, mutex e protótipos para acesso e manipulação da \mbox{\hyperlink{structRTDB}{RTDB}}.
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/05/29 
+\end{DoxyDate}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{task_8h_a5047ee7b772d7f5f69a1cd0ef2f83f32}\label{task_8h_a5047ee7b772d7f5f69a1cd0ef2f83f32}} 
+\index{task.h@{task.h}!db@{db}}
+\index{db@{db}!task.h@{task.h}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRTDB}{RTDB}} db\hspace{0.3cm}{\ttfamily [extern]}}
+
+Variável global da \mbox{\hyperlink{structRTDB}{RTDB}} partilhada entre as tasks \mbox{\Hypertarget{task_8h_a6d2bc6e8daf73029e362c7456a9b5e7d}\label{task_8h_a6d2bc6e8daf73029e362c7456a9b5e7d}} 
+\index{task.h@{task.h}!db\_lock@{db\_lock}}
+\index{db\_lock@{db\_lock}!task.h@{task.h}}
+\doxysubsubsection{\texorpdfstring{db\_lock}{db\_lock}}
+{\footnotesize\ttfamily struct k\+\_\+mutex db\+\_\+lock\hspace{0.3cm}{\ttfamily [extern]}}
+
+Mutex global para acesso concorrente à \mbox{\hyperlink{structRTDB}{RTDB}} 

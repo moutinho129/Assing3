@@ -1,0 +1,75 @@
+\hypertarget{button__task_8h}{}\doxysection{include/button\+\_\+task.h File Reference}
+\label{button__task_8h}\index{include/button\_task.h@{include/button\_task.h}}
+
+
+Declaração da task responsável pela leitura dos botões físicos e atualização da \mbox{\hyperlink{structRTDB}{RTDB}}.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{button__task_8h_a28ab112818948e6ca985fd71d7f54533}{button\+\_\+task}} (void $\ast$a, void $\ast$b, void $\ast$c)
+\begin{DoxyCompactList}\small\item\em Task responsável por monitorizar e tratar eventos dos botões físicos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaração da task responsável pela leitura dos botões físicos e atualização da \mbox{\hyperlink{structRTDB}{RTDB}}. 
+
+Esta task faz o polling dos botões e atualiza os estados do sistema (ex\+: ON/\+OFF, incremento/decremento do setpoint) na \mbox{\hyperlink{structRTDB}{RTDB}}, garantindo acesso concorrente seguro.
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/05/29 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{button__task_8h_a28ab112818948e6ca985fd71d7f54533}\label{button__task_8h_a28ab112818948e6ca985fd71d7f54533}} 
+\index{button\_task.h@{button\_task.h}!button\_task@{button\_task}}
+\index{button\_task@{button\_task}!button\_task.h@{button\_task.h}}
+\doxysubsubsection{\texorpdfstring{button\_task()}{button\_task()}}
+{\footnotesize\ttfamily void button\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{a,  }\item[{void $\ast$}]{b,  }\item[{void $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Task responsável por monitorizar e tratar eventos dos botões físicos. 
+
+Os botões são lidos periodicamente e os estados do sistema são atualizados na \mbox{\hyperlink{structRTDB}{RTDB}}\+:
+\begin{DoxyItemize}
+\item -\/ Botão 1\+: Liga/desliga o sistema
+\item -\/ Botão 2\+: Incrementa a temperatura pretendida
+\item -\/ Botão 3\+: Não utilizado
+\item -\/ Botão 4\+: Decrementa a temperatura pretendida
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Não utilizado \\
+\hline
+{\em b} & Não utilizado \\
+\hline
+{\em c} & Não utilizado\\
+\hline
+\end{DoxyParams}
+Task responsável por monitorizar e tratar eventos dos botões físicos.
+
+Lê os botões definidos no sistema\+:
+\begin{DoxyItemize}
+\item Botão 1\+: Liga/desliga o sistema
+\item Botão 2\+: Aumenta o setpoint
+\item Botão 4\+: Diminui o setpoint
+\end{DoxyItemize}
+
+Atualiza a \mbox{\hyperlink{structRTDB}{RTDB}} com base nas interações do utilizador.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em b} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em c} & Ponteiro genérico (não utilizado) \\
+\hline
+\end{DoxyParams}

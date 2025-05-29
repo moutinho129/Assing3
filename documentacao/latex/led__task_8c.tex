@@ -1,0 +1,104 @@
+\hypertarget{led__task_8c}{}\doxysection{src/led\+\_\+task.c File Reference}
+\label{led__task_8c}\index{src/led\_task.c@{src/led\_task.c}}
+
+
+Funções usadas na task responsável por controlar os LEDs do sistema.  
+
+
+{\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/device.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/devicetree.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/drivers/gpio.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/sys/printk.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/task.\+h\char`\"{}}\newline
+Include dependency graph for led\+\_\+task.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{led__task_8c_ac8b7bbb65d5065e43a35775d9fc3e322}{LED1\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(led0)
+\item 
+\#define \mbox{\hyperlink{led__task_8c_a9014b2cb02041c926b50b6411232ee82}{LED2\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(led1)
+\item 
+\#define \mbox{\hyperlink{led__task_8c_ad5246f73682d98292ef7d7b038582700}{LED3\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(led2)
+\item 
+\#define \mbox{\hyperlink{led__task_8c_ae4c8a732da78bf809363947e4aff8ea5}{LED4\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(led3)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{led__task_8c_a8ee90e672bf1005d9c6844f8aa898eae}{led\+\_\+task}} (void $\ast$a, void $\ast$b, void $\ast$c)
+\begin{DoxyCompactList}\small\item\em Tarefa responsável pela atualização dos LEDs do sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções usadas na task responsável por controlar os LEDs do sistema. 
+
+O ficheiro \mbox{\hyperlink{led__task_8c}{led\+\_\+task.\+c}} contem a implementação das funções que foram declaradas no ficheiro \mbox{\hyperlink{led__task_8h}{led\+\_\+task.\+h}}
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/05/29 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{led__task_8c_ac8b7bbb65d5065e43a35775d9fc3e322}\label{led__task_8c_ac8b7bbb65d5065e43a35775d9fc3e322}} 
+\index{led\_task.c@{led\_task.c}!LED1\_NODE@{LED1\_NODE}}
+\index{LED1\_NODE@{LED1\_NODE}!led\_task.c@{led\_task.c}}
+\doxysubsubsection{\texorpdfstring{LED1\_NODE}{LED1\_NODE}}
+{\footnotesize\ttfamily \#define LED1\+\_\+\+NODE~DT\+\_\+\+ALIAS(led0)}
+
+\mbox{\Hypertarget{led__task_8c_a9014b2cb02041c926b50b6411232ee82}\label{led__task_8c_a9014b2cb02041c926b50b6411232ee82}} 
+\index{led\_task.c@{led\_task.c}!LED2\_NODE@{LED2\_NODE}}
+\index{LED2\_NODE@{LED2\_NODE}!led\_task.c@{led\_task.c}}
+\doxysubsubsection{\texorpdfstring{LED2\_NODE}{LED2\_NODE}}
+{\footnotesize\ttfamily \#define LED2\+\_\+\+NODE~DT\+\_\+\+ALIAS(led1)}
+
+\mbox{\Hypertarget{led__task_8c_ad5246f73682d98292ef7d7b038582700}\label{led__task_8c_ad5246f73682d98292ef7d7b038582700}} 
+\index{led\_task.c@{led\_task.c}!LED3\_NODE@{LED3\_NODE}}
+\index{LED3\_NODE@{LED3\_NODE}!led\_task.c@{led\_task.c}}
+\doxysubsubsection{\texorpdfstring{LED3\_NODE}{LED3\_NODE}}
+{\footnotesize\ttfamily \#define LED3\+\_\+\+NODE~DT\+\_\+\+ALIAS(led2)}
+
+\mbox{\Hypertarget{led__task_8c_ae4c8a732da78bf809363947e4aff8ea5}\label{led__task_8c_ae4c8a732da78bf809363947e4aff8ea5}} 
+\index{led\_task.c@{led\_task.c}!LED4\_NODE@{LED4\_NODE}}
+\index{LED4\_NODE@{LED4\_NODE}!led\_task.c@{led\_task.c}}
+\doxysubsubsection{\texorpdfstring{LED4\_NODE}{LED4\_NODE}}
+{\footnotesize\ttfamily \#define LED4\+\_\+\+NODE~DT\+\_\+\+ALIAS(led3)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{led__task_8c_a8ee90e672bf1005d9c6844f8aa898eae}\label{led__task_8c_a8ee90e672bf1005d9c6844f8aa898eae}} 
+\index{led\_task.c@{led\_task.c}!led\_task@{led\_task}}
+\index{led\_task@{led\_task}!led\_task.c@{led\_task.c}}
+\doxysubsubsection{\texorpdfstring{led\_task()}{led\_task()}}
+{\footnotesize\ttfamily void led\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{a,  }\item[{void $\ast$}]{b,  }\item[{void $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Tarefa responsável pela atualização dos LEDs do sistema. 
+
+Task responsável por atualizar os LEDs do sistema de acordo com a \mbox{\hyperlink{structRTDB}{RTDB}}.
+
+Atualiza os LEDs com base no estado atual do sistema, conforme definido na \mbox{\hyperlink{structRTDB}{RTDB}}\+:
+\begin{DoxyItemize}
+\item LED1\+: Sistema ligado/desligado
+\item LED2\+: Estado normal (±2°C do setpoint)
+\item LED3\+: Temperatura abaixo do alvo
+\item LED4\+: Temperatura acima do alvo
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em b} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em c} & Ponteiro genérico (não utilizado) \\
+\hline
+\end{DoxyParams}

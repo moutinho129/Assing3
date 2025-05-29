@@ -1,0 +1,126 @@
+\hypertarget{main_8c}{}\doxysection{src/main.c File Reference}
+\label{main_8c}\index{src/main.c@{src/main.c}}
+
+
+Ficheiro principal do projeto SETR Mini-\/\+Projeto.  
+
+
+{\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/sys/printk.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_af099339d864d921d7d0f35ae14377822}{button\+\_\+task}} (void $\ast$, void $\ast$, void $\ast$)
+\begin{DoxyCompactList}\small\item\em Tarefa responsável pela leitura dos botões físicos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a7b3e4b46191b348e298c3fc3e26a834e}{led\+\_\+task}} (void $\ast$, void $\ast$, void $\ast$)
+\begin{DoxyCompactList}\small\item\em Tarefa responsável pela atualização dos LEDs do sistema. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8c_a537dec74a6f913b1b6123a254ab8fe3c}{K\+\_\+\+THREAD\+\_\+\+DEFINE}} (button, 1024, \mbox{\hyperlink{button__task_8h_a28ab112818948e6ca985fd71d7f54533}{button\+\_\+task}}, NULL, NULL, NULL, 5, 0, 0)
+\item 
+\mbox{\hyperlink{main_8c_a18c64b0389c416f0718dd1e6440f2ed5}{K\+\_\+\+THREAD\+\_\+\+DEFINE}} (led, 1024, \mbox{\hyperlink{led__task_8h_a8ee90e672bf1005d9c6844f8aa898eae}{led\+\_\+task}}, NULL, NULL, NULL, 5, 0, 0)
+\item 
+void \mbox{\hyperlink{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Função principal do sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro principal do projeto SETR Mini-\/\+Projeto. 
+
+Responsável pela inicialização do sistema, mutex global e criação das threads para as tasks do sistema.
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/05/29 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_af099339d864d921d7d0f35ae14377822}\label{main_8c_af099339d864d921d7d0f35ae14377822}} 
+\index{main.c@{main.c}!button\_task@{button\_task}}
+\index{button\_task@{button\_task}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{button\_task()}{button\_task()}}
+{\footnotesize\ttfamily void button\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{a,  }\item[{void $\ast$}]{b,  }\item[{void $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Tarefa responsável pela leitura dos botões físicos. 
+
+Lê os botões definidos no sistema\+:
+\begin{DoxyItemize}
+\item Botão 1\+: Liga/desliga o sistema
+\item Botão 2\+: Aumenta o setpoint
+\item Botão 4\+: Diminui o setpoint
+\end{DoxyItemize}
+
+Atualiza a \mbox{\hyperlink{structRTDB}{RTDB}} com base nas interações do utilizador.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em b} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em c} & Ponteiro genérico (não utilizado) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a537dec74a6f913b1b6123a254ab8fe3c}\label{main_8c_a537dec74a6f913b1b6123a254ab8fe3c}} 
+\index{main.c@{main.c}!K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}}
+\index{K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{K\_THREAD\_DEFINE()}{K\_THREAD\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily K\+\_\+\+THREAD\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{button}]{,  }\item[{1024}]{,  }\item[{\mbox{\hyperlink{button__task_8h_a28ab112818948e6ca985fd71d7f54533}{button\+\_\+task}}}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{5}]{,  }\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+Cria e inicia a thread da tarefa de leitura dos botões \mbox{\Hypertarget{main_8c_a18c64b0389c416f0718dd1e6440f2ed5}\label{main_8c_a18c64b0389c416f0718dd1e6440f2ed5}} 
+\index{main.c@{main.c}!K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}}
+\index{K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{K\_THREAD\_DEFINE()}{K\_THREAD\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily K\+\_\+\+THREAD\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{led}]{,  }\item[{1024}]{,  }\item[{\mbox{\hyperlink{led__task_8h_a8ee90e672bf1005d9c6844f8aa898eae}{led\+\_\+task}}}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{5}]{,  }\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+Cria e inicia a thread da tarefa de controlo dos LEDs \mbox{\Hypertarget{main_8c_a7b3e4b46191b348e298c3fc3e26a834e}\label{main_8c_a7b3e4b46191b348e298c3fc3e26a834e}} 
+\index{main.c@{main.c}!led\_task@{led\_task}}
+\index{led\_task@{led\_task}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{led\_task()}{led\_task()}}
+{\footnotesize\ttfamily void led\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{a,  }\item[{void $\ast$}]{b,  }\item[{void $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Tarefa responsável pela atualização dos LEDs do sistema. 
+
+Atualiza os LEDs com base no estado atual do sistema, conforme definido na \mbox{\hyperlink{structRTDB}{RTDB}}\+:
+\begin{DoxyItemize}
+\item LED1\+: Sistema ligado/desligado
+\item LED2\+: Estado normal (±2°C do setpoint)
+\item LED3\+: Temperatura abaixo do alvo
+\item LED4\+: Temperatura acima do alvo
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em b} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em c} & Ponteiro genérico (não utilizado) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}\label{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily void main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Função principal do sistema. 
+
+Inicializa o mutex global e cria as threads para as tarefas do sistema\+:
+\begin{DoxyItemize}
+\item button\+\_\+task\+: leitura dos botões físicos
+\item led\+\_\+task\+: atualização dos LEDs de estado
+\end{DoxyItemize}
+
+Entra num loop infinito com uma espera periódica de 1 segundo. 

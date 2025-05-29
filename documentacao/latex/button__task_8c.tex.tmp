@@ -1,0 +1,96 @@
+\hypertarget{button__task_8c}{}\doxysection{src/button\+\_\+task.c File Reference}
+\label{button__task_8c}\index{src/button\_task.c@{src/button\_task.c}}
+
+
+Funções usadas na task responsável pela leitura dos botões físicos e atualização da \mbox{\hyperlink{structRTDB}{RTDB}}.  
+
+
+{\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/device.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/devicetree.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/drivers/gpio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/task.\+h\char`\"{}}\newline
+Include dependency graph for button\+\_\+task.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{button__task_8c_a96f7d37676c3ecbc7612d50eec3e54ff}{BTN1\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(sw0)
+\item 
+\#define \mbox{\hyperlink{button__task_8c_ad059574f42bfa0704ad3c465e96785ad}{BTN2\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(sw1)
+\item 
+\#define \mbox{\hyperlink{button__task_8c_a03c1f2e5f234ed947571598bea2ec03b}{BTN4\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(sw3)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{button__task_8c_a28ab112818948e6ca985fd71d7f54533}{button\+\_\+task}} (void $\ast$a, void $\ast$b, void $\ast$c)
+\begin{DoxyCompactList}\small\item\em Tarefa responsável pela leitura dos botões físicos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções usadas na task responsável pela leitura dos botões físicos e atualização da \mbox{\hyperlink{structRTDB}{RTDB}}. 
+
+O ficheiro \mbox{\hyperlink{button__task_8c}{button\+\_\+task.\+c}} contem a implementação das funções que foram declaradas no ficheiro \mbox{\hyperlink{button__task_8h}{button\+\_\+task.\+h}}
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/05/29 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{button__task_8c_a96f7d37676c3ecbc7612d50eec3e54ff}\label{button__task_8c_a96f7d37676c3ecbc7612d50eec3e54ff}} 
+\index{button\_task.c@{button\_task.c}!BTN1\_NODE@{BTN1\_NODE}}
+\index{BTN1\_NODE@{BTN1\_NODE}!button\_task.c@{button\_task.c}}
+\doxysubsubsection{\texorpdfstring{BTN1\_NODE}{BTN1\_NODE}}
+{\footnotesize\ttfamily \#define BTN1\+\_\+\+NODE~DT\+\_\+\+ALIAS(sw0)}
+
+\mbox{\Hypertarget{button__task_8c_ad059574f42bfa0704ad3c465e96785ad}\label{button__task_8c_ad059574f42bfa0704ad3c465e96785ad}} 
+\index{button\_task.c@{button\_task.c}!BTN2\_NODE@{BTN2\_NODE}}
+\index{BTN2\_NODE@{BTN2\_NODE}!button\_task.c@{button\_task.c}}
+\doxysubsubsection{\texorpdfstring{BTN2\_NODE}{BTN2\_NODE}}
+{\footnotesize\ttfamily \#define BTN2\+\_\+\+NODE~DT\+\_\+\+ALIAS(sw1)}
+
+\mbox{\Hypertarget{button__task_8c_a03c1f2e5f234ed947571598bea2ec03b}\label{button__task_8c_a03c1f2e5f234ed947571598bea2ec03b}} 
+\index{button\_task.c@{button\_task.c}!BTN4\_NODE@{BTN4\_NODE}}
+\index{BTN4\_NODE@{BTN4\_NODE}!button\_task.c@{button\_task.c}}
+\doxysubsubsection{\texorpdfstring{BTN4\_NODE}{BTN4\_NODE}}
+{\footnotesize\ttfamily \#define BTN4\+\_\+\+NODE~DT\+\_\+\+ALIAS(sw3)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{button__task_8c_a28ab112818948e6ca985fd71d7f54533}\label{button__task_8c_a28ab112818948e6ca985fd71d7f54533}} 
+\index{button\_task.c@{button\_task.c}!button\_task@{button\_task}}
+\index{button\_task@{button\_task}!button\_task.c@{button\_task.c}}
+\doxysubsubsection{\texorpdfstring{button\_task()}{button\_task()}}
+{\footnotesize\ttfamily void button\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{a,  }\item[{void $\ast$}]{b,  }\item[{void $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Tarefa responsável pela leitura dos botões físicos. 
+
+Task responsável por monitorizar e tratar eventos dos botões físicos.
+
+Lê os botões definidos no sistema\+:
+\begin{DoxyItemize}
+\item Botão 1\+: Liga/desliga o sistema
+\item Botão 2\+: Aumenta o setpoint
+\item Botão 4\+: Diminui o setpoint
+\end{DoxyItemize}
+
+Atualiza a \mbox{\hyperlink{structRTDB}{RTDB}} com base nas interações do utilizador.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em b} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em c} & Ponteiro genérico (não utilizado) \\
+\hline
+\end{DoxyParams}

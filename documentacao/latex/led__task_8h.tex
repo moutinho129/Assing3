@@ -1,0 +1,74 @@
+\hypertarget{led__task_8h}{}\doxysection{include/led\+\_\+task.h File Reference}
+\label{led__task_8h}\index{include/led\_task.h@{include/led\_task.h}}
+
+
+Declaração da task de controlo dos LEDs de estado do sistema.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{led__task_8h_a8ee90e672bf1005d9c6844f8aa898eae}{led\+\_\+task}} (void $\ast$a, void $\ast$b, void $\ast$c)
+\begin{DoxyCompactList}\small\item\em Task responsável por atualizar os LEDs do sistema de acordo com a \mbox{\hyperlink{structRTDB}{RTDB}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaração da task de controlo dos LEDs de estado do sistema. 
+
+Esta task lê a \mbox{\hyperlink{structRTDB}{RTDB}} e atualiza o estado dos LEDs consoante as condições de funcionamento
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/05/29 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{led__task_8h_a8ee90e672bf1005d9c6844f8aa898eae}\label{led__task_8h_a8ee90e672bf1005d9c6844f8aa898eae}} 
+\index{led\_task.h@{led\_task.h}!led\_task@{led\_task}}
+\index{led\_task@{led\_task}!led\_task.h@{led\_task.h}}
+\doxysubsubsection{\texorpdfstring{led\_task()}{led\_task()}}
+{\footnotesize\ttfamily void led\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{a,  }\item[{void $\ast$}]{b,  }\item[{void $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Task responsável por atualizar os LEDs do sistema de acordo com a \mbox{\hyperlink{structRTDB}{RTDB}}. 
+
+Os Leds são atualizados com base nos estados do sistema\+:
+\begin{DoxyItemize}
+\item -\/ Led 1\+: (ON/\+OFF)
+\item -\/ Led 2\+: Estado normal (temperatura +/-\/ 2ºC da temperatura pretendida)
+\item -\/ Led 3\+: Temperatura baixa (temperatura $<$ 2ºC da temperatura pretendida)
+\item -\/ Led 4\+: Temperatura alta (temperatura $>$ 2ºC da temperatura pretendida)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Não utilizado \\
+\hline
+{\em b} & Não utilizado \\
+\hline
+{\em c} & Não utilizado\\
+\hline
+\end{DoxyParams}
+Task responsável por atualizar os LEDs do sistema de acordo com a \mbox{\hyperlink{structRTDB}{RTDB}}.
+
+Atualiza os LEDs com base no estado atual do sistema, conforme definido na \mbox{\hyperlink{structRTDB}{RTDB}}\+:
+\begin{DoxyItemize}
+\item LED1\+: Sistema ligado/desligado
+\item LED2\+: Estado normal (±2°C do setpoint)
+\item LED3\+: Temperatura abaixo do alvo
+\item LED4\+: Temperatura acima do alvo
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em b} & Ponteiro genérico (não utilizado) \\
+\hline
+{\em c} & Ponteiro genérico (não utilizado) \\
+\hline
+\end{DoxyParams}

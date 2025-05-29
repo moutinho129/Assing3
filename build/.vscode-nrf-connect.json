@@ -1,0 +1,17 @@
+{
+  "toolchainPath": "/home/moutinho/ncs/toolchains/2be090971e",
+  "sdkPath": "/home/moutinho/ncs/v2.6.0",
+  "board": "nrf52840dk_nrf52840",
+  "boardDir": "/home/moutinho/ncs/v2.6.0/zephyr/boards/arm/nrf52840dk_nrf52840",
+  "boardDirs": [
+    "/home/moutinho/ncs/v2.6.0/zephyr/boards/arm/nrf52840dk_nrf52840"
+  ],
+  "optimizations": "none",
+  "cmakeArgs": [],
+  "confFiles": [],
+  "buildDirectory": "build",
+  "kconfigFragments": [],
+  "snippets": [],
+  "dtcOverlays": [],
+  "extraDtcOverlays": []
+}

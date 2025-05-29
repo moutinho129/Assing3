@@ -1,0 +1,55 @@
+\hypertarget{task_8c}{}\doxysection{src/task.c File Reference}
+\label{task_8c}\index{src/task.c@{src/task.c}}
+
+
+Funções usadas nas tasks do sistema SETR Mini-\/\+Projeto.  
+
+
+{\ttfamily \#include \char`\"{}../include/task.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for task.\+c\+:
+% FIG 0
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRTDB}{RTDB}} \mbox{\hyperlink{task_8c_a5047ee7b772d7f5f69a1cd0ef2f83f32}{db}}
+\item 
+struct k\+\_\+mutex \mbox{\hyperlink{task_8c_a6d2bc6e8daf73029e362c7456a9b5e7d}{db\+\_\+lock}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções usadas nas tasks do sistema SETR Mini-\/\+Projeto. 
+
+O ficheiro \mbox{\hyperlink{task_8c}{task.\+c}} contem a implementação das funções que foram declaradas no ficheiro \mbox{\hyperlink{task_8h}{task.\+h}}
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/05/29 
+\end{DoxyDate}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{task_8c_a5047ee7b772d7f5f69a1cd0ef2f83f32}\label{task_8c_a5047ee7b772d7f5f69a1cd0ef2f83f32}} 
+\index{task.c@{task.c}!db@{db}}
+\index{db@{db}!task.c@{task.c}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRTDB}{RTDB}} db}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .system\_on = 0,}
+\DoxyCodeLine{    .max\_temp = 30,      }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Variável global da \mbox{\hyperlink{structRTDB}{RTDB}} partilhada entre as tasks \mbox{\Hypertarget{task_8c_a6d2bc6e8daf73029e362c7456a9b5e7d}\label{task_8c_a6d2bc6e8daf73029e362c7456a9b5e7d}} 
+\index{task.c@{task.c}!db\_lock@{db\_lock}}
+\index{db\_lock@{db\_lock}!task.c@{task.c}}
+\doxysubsubsection{\texorpdfstring{db\_lock}{db\_lock}}
+{\footnotesize\ttfamily struct k\+\_\+mutex db\+\_\+lock}
+
+Mutex global para acesso concorrente à \mbox{\hyperlink{structRTDB}{RTDB}} 

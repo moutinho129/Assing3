@@ -1,0 +1,44 @@
+/**
+ * @file main.c
+ * @brief Ficheiro principal do projeto SETR Mini-Projeto.
+ *
+ * Responsável pela inicialização do sistema, mutex global e criação das threads para as tasks do sistema.
+ *
+ * @author Nuno Moutinho - 98626 e João Ferreira - 98180
+ * @date 2025/05/29
+ */
+
+ #include <zephyr/kernel.h>
+#include <zephyr/sys/printk.h>
+#include <stdlib.h>
+#include "task.h"
+
+void button_task(void *, void *, void *);
+void led_task(void *, void *, void *);
+
+/** Cria e inicia a thread da tarefa de leitura dos botões */
+K_THREAD_DEFINE(button,1024,button_task,NULL,NULL,NULL,5,0,0);
+
+/** Cria e inicia a thread da tarefa de controlo dos LEDs */
+K_THREAD_DEFINE(led,1024,led_task,NULL,NULL,NULL,5,0,0);
+
+/**
+ * @brief Função principal do sistema.
+ *
+ * Inicializa o mutex global e cria as threads para as tarefas do sistema:
+ * - button_task: leitura dos botões físicos
+ * - led_task: atualização dos LEDs de estado
+ *
+ * Entra num loop infinito com uma espera periódica de 1 segundo.
+ */
+void main(void)
+{
+    printk("Assign3: a correr!\n");
+    k_mutex_init(&db_lock);
+
+    while (1) {
+        k_sleep(K_SECONDS(1));
+    }
+}
+
+
