@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/test_runner.dir/unitycmd.c.o CMakeFiles/test_runner.dir/mock_cmd.c.o CMakeFiles/test_runner.dir/mock_task.c.o CMakeFiles/test_runner.dir/mock_zephyr.c.o CMakeFiles/test_runner.dir/home/moutinho/Desktop/assing3/unity/unity.c.o -o test_runner 

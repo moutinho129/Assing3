@@ -1,0 +1,3 @@
+/home/moutinho/Desktop/assing3/build_test/CMakeFiles/test_runner.dir
+/home/moutinho/Desktop/assing3/build_test/CMakeFiles/edit_cache.dir
+/home/moutinho/Desktop/assing3/build_test/CMakeFiles/rebuild_cache.dir
