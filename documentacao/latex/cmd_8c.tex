@@ -1,0 +1,220 @@
+\hypertarget{cmd_8c}{}\doxysection{src/cmd.c File Reference}
+\label{cmd_8c}\index{src/cmd.c@{src/cmd.c}}
+
+
+Ficheiro para teste dos comandos do sistema SETR Mini-\/\+Projeto.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/cmd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/task.\+h\char`\"{}}\newline
+Include dependency graph for cmd.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cmd_8c_a517f5b7a13af4da2c1ba3353f14f7f4d}{set\+\_\+max\+\_\+temp}} (int t)
+\begin{DoxyCompactList}\small\item\em Define a temperatura máxima do sistema. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmd_8c_addc390094fe556d15f951c3a2bdbdbe4}{get\+\_\+current\+\_\+temp}} (void)
+\begin{DoxyCompactList}\small\item\em Lê a temperatura atual do sensor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmd_8c_a073961baba82f2a2de88774870ab977b}{cmd}} (void)
+\begin{DoxyCompactList}\small\item\em Função para processar comandos recebidos pela UART. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmd_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1}{calc\+Checksum}} (unsigned char $\ast$buf, int nbytes)
+\begin{DoxyCompactList}\small\item\em Calcula o checksum de um buffer de bytes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmd_8c_af7c6e7096a207b3ca99ad9f783aea579}{int\+To\+Ascii}} (int num, char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Converte um número inteiro em uma representação ASCII. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmd_8c_a67ae8a79a708a3c5471668bddbd16400}{rx\+Char}} (unsigned char car)
+\begin{DoxyCompactList}\small\item\em Envia um caractere para o buffer de recepção UART. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cmd_8c_abdb4363f0662688850bbcdfb59ce4566}{tx\+Char}} (unsigned char car)
+\begin{DoxyCompactList}\small\item\em Envia um caractere para o buffer de transmissão UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmd_8c_a918f38a7eecdd03671d28a3a07f94856}{reset\+Rx\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Reseta o buffer de recepção UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmd_8c_abd91ad9b5887f4769f45823899583bab}{reset\+Tx\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Reseta o buffer de transmissão UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmd_8c_a8beeddde9a644610c72724be856db6dd}{get\+Tx\+Buffer}} (unsigned char $\ast$buf, int $\ast$len)
+\begin{DoxyCompactList}\small\item\em Obtém o conteúdo do buffer de transmissão UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro para teste dos comandos do sistema SETR Mini-\/\+Projeto. 
+
+Este ficheiro contém a implementação das funções que foram declaradas no ficheiro \mbox{\hyperlink{cmd_8h}{cmd.\+h}}. \#\+Mxxxyyy! -\/ Define a temperatura máxima do sistema (xxx é o valor da temperatura máxima, yyy é o checksum). \#\+Cyyy! -\/ Lê a temperatura atual do sensor (retorna a temperatura atual, seguida do checksum). \#\+Sxxxxyyy! -\/ Define os parâmetros do PID (Kp, Ti, Td) do sistema (xxx são os parametros (Kp, Ti, Td), yyy é o checksum).
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/06/01 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]Desconhecidos\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cmd_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1}\label{cmd_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1}} 
+\index{cmd.c@{cmd.c}!calcChecksum@{calcChecksum}}
+\index{calcChecksum@{calcChecksum}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{calcChecksum()}{calcChecksum()}}
+{\footnotesize\ttfamily int calc\+Checksum (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buf,  }\item[{int}]{nbytes }\end{DoxyParamCaption})}
+
+
+
+Calcula o checksum de um buffer de bytes. 
+
+Calcula o checksum de um buffer.
+
+Esta função calcula o checksum de um buffer de bytes e verifica se o checksum calculado corresponde ao checksum esperado. 
+\begin{DoxyParams}{Parameters}
+{\em buf} & Ponteiro para o buffer de bytes. \\
+\hline
+{\em nbytes} & Número de bytes no buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna CMD\+\_\+\+SUCCESS se o checksum estiver correto, ou CMD\+\_\+\+CS\+\_\+\+ERROR se houver um erro no checksum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{cmd_8c_a073961baba82f2a2de88774870ab977b}\label{cmd_8c_a073961baba82f2a2de88774870ab977b}} 
+\index{cmd.c@{cmd.c}!cmd@{cmd}}
+\index{cmd@{cmd}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{cmd()}{cmd()}}
+{\footnotesize\ttfamily int cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Função para processar comandos recebidos pela UART. 
+
+
+\begin{DoxyItemize}
+\item Esta função analisa os comandos recebidos no buffer de recepção UART e executa as ações correspondentes. 
+\end{DoxyItemize}\mbox{\Hypertarget{cmd_8c_addc390094fe556d15f951c3a2bdbdbe4}\label{cmd_8c_addc390094fe556d15f951c3a2bdbdbe4}} 
+\index{cmd.c@{cmd.c}!get\_current\_temp@{get\_current\_temp}}
+\index{get\_current\_temp@{get\_current\_temp}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{get\_current\_temp()}{get\_current\_temp()}}
+{\footnotesize\ttfamily int get\+\_\+current\+\_\+temp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Lê a temperatura atual do sensor. 
+
+Esta função obtém a temperatura atual medida pelo sensor.
+
+\begin{DoxyReturn}{Returns}
+int A temperatura atual. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{cmd_8c_a8beeddde9a644610c72724be856db6dd}\label{cmd_8c_a8beeddde9a644610c72724be856db6dd}} 
+\index{cmd.c@{cmd.c}!getTxBuffer@{getTxBuffer}}
+\index{getTxBuffer@{getTxBuffer}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{getTxBuffer()}{getTxBuffer()}}
+{\footnotesize\ttfamily void get\+Tx\+Buffer (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buf,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+Obtém o conteúdo do buffer de transmissão UART. 
+
+Define a temperatura máxima do sistema.
+
+Esta função copia o conteúdo do buffer de transmissão UART para o buffer fornecido e atualiza o comprimento do buffer. 
+\begin{DoxyParams}{Parameters}
+{\em buf} & Ponteiro para o buffer onde o conteúdo será copiado. \\
+\hline
+{\em len} & Ponteiro para um inteiro onde o comprimento do buffer será armazenado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cmd_8c_af7c6e7096a207b3ca99ad9f783aea579}\label{cmd_8c_af7c6e7096a207b3ca99ad9f783aea579}} 
+\index{cmd.c@{cmd.c}!intToAscii@{intToAscii}}
+\index{intToAscii@{intToAscii}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{intToAscii()}{intToAscii()}}
+{\footnotesize\ttfamily void int\+To\+Ascii (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Converte um número inteiro em uma representação ASCII. 
+
+
+\begin{DoxyItemize}
+\item Esta função converte um número inteiro em uma string ASCII, desde que o número esteja no intervalo de 1 a 99999. 
+\begin{DoxyParams}{Parameters}
+{\em num} & O número inteiro a ser convertido. \\
+\hline
+{\em str} & O buffer onde a representação ASCII será armazenada.\\
+\hline
+\end{DoxyParams}
+
+\item Esta função verifica se o número é negativo e o converte para positivo antes de a conversão.
+\item Se o número estiver fora do intervalo permitido, a string resultante será vazia. 
+\end{DoxyItemize}\mbox{\Hypertarget{cmd_8c_a918f38a7eecdd03671d28a3a07f94856}\label{cmd_8c_a918f38a7eecdd03671d28a3a07f94856}} 
+\index{cmd.c@{cmd.c}!resetRxBuffer@{resetRxBuffer}}
+\index{resetRxBuffer@{resetRxBuffer}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{resetRxBuffer()}{resetRxBuffer()}}
+{\footnotesize\ttfamily void reset\+Rx\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reseta o buffer de recepção UART. 
+
+Esta função limpa o buffer de recepção UART, definindo seu comprimento para zero. \mbox{\Hypertarget{cmd_8c_abd91ad9b5887f4769f45823899583bab}\label{cmd_8c_abd91ad9b5887f4769f45823899583bab}} 
+\index{cmd.c@{cmd.c}!resetTxBuffer@{resetTxBuffer}}
+\index{resetTxBuffer@{resetTxBuffer}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{resetTxBuffer()}{resetTxBuffer()}}
+{\footnotesize\ttfamily void reset\+Tx\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reseta o buffer de transmissão UART. 
+
+Esta função limpa o buffer de transmissão UART, definindo seu comprimento para zero. \mbox{\Hypertarget{cmd_8c_a67ae8a79a708a3c5471668bddbd16400}\label{cmd_8c_a67ae8a79a708a3c5471668bddbd16400}} 
+\index{cmd.c@{cmd.c}!rxChar@{rxChar}}
+\index{rxChar@{rxChar}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{rxChar()}{rxChar()}}
+{\footnotesize\ttfamily int rx\+Char (\begin{DoxyParamCaption}\item[{unsigned char}]{car }\end{DoxyParamCaption})}
+
+
+
+Envia um caractere para o buffer de recepção UART. 
+
+
+\begin{DoxyItemize}
+\item Esta função adiciona um caractere ao buffer de recepção UART, se o buffer não estiver cheio. 
+\begin{DoxyParams}{Parameters}
+{\em car} & O caractere a ser recebido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 0 se o caractere foi adicionado com sucesso, ou -\/1 se o buffer estiver cheio. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{cmd_8c_a517f5b7a13af4da2c1ba3353f14f7f4d}\label{cmd_8c_a517f5b7a13af4da2c1ba3353f14f7f4d}} 
+\index{cmd.c@{cmd.c}!set\_max\_temp@{set\_max\_temp}}
+\index{set\_max\_temp@{set\_max\_temp}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{set\_max\_temp()}{set\_max\_temp()}}
+{\footnotesize\ttfamily void set\+\_\+max\+\_\+temp (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})}
+
+
+
+Define a temperatura máxima do sistema. 
+
+Esta função atualiza a temperatura máxima permitida no sistema. \mbox{\Hypertarget{cmd_8c_abdb4363f0662688850bbcdfb59ce4566}\label{cmd_8c_abdb4363f0662688850bbcdfb59ce4566}} 
+\index{cmd.c@{cmd.c}!txChar@{txChar}}
+\index{txChar@{txChar}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{txChar()}{txChar()}}
+{\footnotesize\ttfamily int tx\+Char (\begin{DoxyParamCaption}\item[{unsigned char}]{car }\end{DoxyParamCaption})}
+
+
+
+Envia um caractere para o buffer de transmissão UART. 
+
+
+\begin{DoxyItemize}
+\item Esta função adiciona um caractere ao buffer de transmissão UART, se o buffer não estiver cheio. 
+\begin{DoxyParams}{Parameters}
+{\em car} & O caractere a ser enviado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 0 se o caractere foi adicionado com sucesso, ou -\/1 se o buffer estiver cheio. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}

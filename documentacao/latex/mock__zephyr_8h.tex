@@ -1,0 +1,70 @@
+\hypertarget{mock__zephyr_8h}{}\doxysection{teste/mock\+\_\+zephyr.h File Reference}
+\label{mock__zephyr_8h}\index{teste/mock\_zephyr.h@{teste/mock\_zephyr.h}}
+
+
+Cabeçalho para simulação do Zephyr RTOS em testes unitários.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mock__zephyr_8h_a0bb4b83f0222193b21a8910311bab0ca}{K\+\_\+\+FOREVER}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mock__zephyr_8h_aa6a6c3ba7dcebd800087ee73b82c0dd7}{k\+\_\+mutex\+\_\+lock}} (struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} $\ast$mutex, int timeout)
+\item 
+int \mbox{\hyperlink{mock__zephyr_8h_a360f4c0e7258b0d7030cdb1f452b2c31}{k\+\_\+mutex\+\_\+unlock}} (struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} $\ast$mutex)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cabeçalho para simulação do Zephyr RTOS em testes unitários. 
+
+
+\begin{DoxyItemize}
+\item Este arquivo define constantes e estruturas simuladas do Zephyr RTOS para testes unitários.
+\item $\ast$ É usado para simular o comportamento do Zephyr RTOS, como mutexes e delays, sem depender do ambiente real.
+\item \begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180
+\end{DoxyAuthor}
+
+\item \begin{DoxyDate}{Date}
+2025/06/01
+\end{DoxyDate}
+
+\item \begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000008}{Bug}}]Desconhecidos\end{DoxyRefDesc}
+
+\end{DoxyItemize}
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{mock__zephyr_8h_a0bb4b83f0222193b21a8910311bab0ca}\label{mock__zephyr_8h_a0bb4b83f0222193b21a8910311bab0ca}} 
+\index{mock\_zephyr.h@{mock\_zephyr.h}!K\_FOREVER@{K\_FOREVER}}
+\index{K\_FOREVER@{K\_FOREVER}!mock\_zephyr.h@{mock\_zephyr.h}}
+\doxysubsubsection{\texorpdfstring{K\_FOREVER}{K\_FOREVER}}
+{\footnotesize\ttfamily \#define K\+\_\+\+FOREVER~0}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mock__zephyr_8h_aa6a6c3ba7dcebd800087ee73b82c0dd7}\label{mock__zephyr_8h_aa6a6c3ba7dcebd800087ee73b82c0dd7}} 
+\index{mock\_zephyr.h@{mock\_zephyr.h}!k\_mutex\_lock@{k\_mutex\_lock}}
+\index{k\_mutex\_lock@{k\_mutex\_lock}!mock\_zephyr.h@{mock\_zephyr.h}}
+\doxysubsubsection{\texorpdfstring{k\_mutex\_lock()}{k\_mutex\_lock()}}
+{\footnotesize\ttfamily int k\+\_\+mutex\+\_\+lock (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} $\ast$}]{mutex,  }\item[{int}]{timeout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mock__zephyr_8h_a360f4c0e7258b0d7030cdb1f452b2c31}\label{mock__zephyr_8h_a360f4c0e7258b0d7030cdb1f452b2c31}} 
+\index{mock\_zephyr.h@{mock\_zephyr.h}!k\_mutex\_unlock@{k\_mutex\_unlock}}
+\index{k\_mutex\_unlock@{k\_mutex\_unlock}!mock\_zephyr.h@{mock\_zephyr.h}}
+\doxysubsubsection{\texorpdfstring{k\_mutex\_unlock()}{k\_mutex\_unlock()}}
+{\footnotesize\ttfamily int k\+\_\+mutex\+\_\+unlock (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} $\ast$}]{mutex }\end{DoxyParamCaption})}
+

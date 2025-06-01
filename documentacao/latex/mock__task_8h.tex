@@ -1,0 +1,59 @@
+\hypertarget{mock__task_8h}{}\doxysection{teste/mock\+\_\+task.h File Reference}
+\label{mock__task_8h}\index{teste/mock\_task.h@{teste/mock\_task.h}}
+
+
+Cabeçalho para simulação de tarefas do sistema SETR Mini-\/\+Projeto.  
+
+
+{\ttfamily \#include \char`\"{}mock\+\_\+zephyr.\+h\char`\"{}}\newline
+Include dependency graph for mock\+\_\+task.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRTDB}{RTDB}}
+\begin{DoxyCompactList}\small\item\em Estrutura da base de dados partilhada entre tasks (\mbox{\hyperlink{structRTDB}{RTDB}}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} \mbox{\hyperlink{mock__task_8h_a6d2bc6e8daf73029e362c7456a9b5e7d}{db\+\_\+lock}}
+\item 
+struct \mbox{\hyperlink{structRTDB}{RTDB}} \mbox{\hyperlink{mock__task_8h_a5047ee7b772d7f5f69a1cd0ef2f83f32}{db}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cabeçalho para simulação de tarefas do sistema SETR Mini-\/\+Projeto. 
+
+
+\begin{DoxyItemize}
+\item Define a estrutura de dados partilhada entre tarefas e declara mutexes para sincronização.
+\item Este arquivo é usado para testes unitários e simula o comportamento das tarefas do sistema.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/06/01 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000006}{Bug}}]Desconhecidos \end{DoxyRefDesc}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mock__task_8h_a5047ee7b772d7f5f69a1cd0ef2f83f32}\label{mock__task_8h_a5047ee7b772d7f5f69a1cd0ef2f83f32}} 
+\index{mock\_task.h@{mock\_task.h}!db@{db}}
+\index{db@{db}!mock\_task.h@{mock\_task.h}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRTDB}{RTDB}} db\hspace{0.3cm}{\ttfamily [extern]}}
+
+Variável global da \mbox{\hyperlink{structRTDB}{RTDB}} partilhada entre as tasks \mbox{\Hypertarget{mock__task_8h_a6d2bc6e8daf73029e362c7456a9b5e7d}\label{mock__task_8h_a6d2bc6e8daf73029e362c7456a9b5e7d}} 
+\index{mock\_task.h@{mock\_task.h}!db\_lock@{db\_lock}}
+\index{db\_lock@{db\_lock}!mock\_task.h@{mock\_task.h}}
+\doxysubsubsection{\texorpdfstring{db\_lock}{db\_lock}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} db\+\_\+lock\hspace{0.3cm}{\ttfamily [extern]}}
+
+Mutex global para acesso concorrente à \mbox{\hyperlink{structRTDB}{RTDB}} 

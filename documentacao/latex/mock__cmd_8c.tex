@@ -1,0 +1,288 @@
+\hypertarget{mock__cmd_8c}{}\doxysection{teste/mock\+\_\+cmd.c File Reference}
+\label{mock__cmd_8c}\index{teste/mock\_cmd.c@{teste/mock\_cmd.c}}
+
+
+Ficheiro para teste dos comandos do sistema SETR Mini-\/\+Projeto.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}mock\+\_\+cmd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mock\+\_\+zephyr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mock\+\_\+task.\+h\char`\"{}}\newline
+Include dependency graph for mock\+\_\+cmd.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mock__cmd_8c_a517f5b7a13af4da2c1ba3353f14f7f4d}{set\+\_\+max\+\_\+temp}} (int t)
+\begin{DoxyCompactList}\small\item\em Define a temperatura máxima do sistema. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mock__cmd_8c_addc390094fe556d15f951c3a2bdbdbe4}{get\+\_\+current\+\_\+temp}} (void)
+\begin{DoxyCompactList}\small\item\em Lê a temperatura atual do sensor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mock__cmd_8c_a073961baba82f2a2de88774870ab977b}{cmd}} (void)
+\begin{DoxyCompactList}\small\item\em Função para processar comandos recebidos pela UART. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mock__cmd_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1}{calc\+Checksum}} (unsigned char $\ast$buf, int nbytes)
+\begin{DoxyCompactList}\small\item\em Calcula o checksum de um buffer de bytes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mock__cmd_8c_af7c6e7096a207b3ca99ad9f783aea579}{int\+To\+Ascii}} (int num, char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Converte um número inteiro em uma representação ASCII. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mock__cmd_8c_a67ae8a79a708a3c5471668bddbd16400}{rx\+Char}} (unsigned char car)
+\begin{DoxyCompactList}\small\item\em Envia um caractere para o buffer de recepção UART. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mock__cmd_8c_abdb4363f0662688850bbcdfb59ce4566}{tx\+Char}} (unsigned char car)
+\begin{DoxyCompactList}\small\item\em Envia um caractere para o buffer de transmissão UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mock__cmd_8c_a918f38a7eecdd03671d28a3a07f94856}{reset\+Rx\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Reseta o buffer de recepção UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mock__cmd_8c_abd91ad9b5887f4769f45823899583bab}{reset\+Tx\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Reseta o buffer de transmissão UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mock__cmd_8c_a8beeddde9a644610c72724be856db6dd}{get\+Tx\+Buffer}} (unsigned char $\ast$buf, int $\ast$len)
+\begin{DoxyCompactList}\small\item\em Obtém o conteúdo do buffer de transmissão UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{mock__cmd_8c_a7801926b7e176ac7223f324794874a2b}{UARTTx\+Buffer}} \mbox{[}\mbox{\hyperlink{mock__cmd_8h_a7bd31e3844f5461db2cbe6d906ca4040}{UART\+\_\+\+TX\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tamanho máximo do buffer de transmissão UART. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{mock__cmd_8c_ae8ecfc303888ce93c420f8052dfca1ce}{tx\+Buf\+Len}} = 0
+\begin{DoxyCompactList}\small\item\em Tamanho atual do buffer de transmissão UART. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{mock__cmd_8c_ae6c75dafeeb8601334ce3cbe089987dd}{UARTRx\+Buffer}} \mbox{[}\mbox{\hyperlink{mock__cmd_8h_a7e4912ef6d5612f8ebca463ff206d9ce}{UART\+\_\+\+RX\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tamanho máximo do buffer de recepção UART. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{mock__cmd_8c_a823a4908418667c2d93e1c049a1795d9}{rx\+Buf\+Len}} = 0
+\begin{DoxyCompactList}\small\item\em Tamanho atual do buffer de recepção UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro para teste dos comandos do sistema SETR Mini-\/\+Projeto. 
+
+Este ficheiro contém a implementação das funções que foram declaradas no ficheiro \mbox{\hyperlink{mock__cmd_8h}{mock\+\_\+cmd.\+h}}. Ficheiro identico ao ficheiro \mbox{\hyperlink{cmd_8c}{cmd.\+c}} mas usado para Unit Testing.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180
+\end{DoxyAuthor}
+
+\item \begin{DoxyDate}{Date}
+2025/06/01
+\end{DoxyDate}
+
+\item \begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000003}{Bug}}]Desconhecidos \end{DoxyRefDesc}
+
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mock__cmd_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1}\label{mock__cmd_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!calcChecksum@{calcChecksum}}
+\index{calcChecksum@{calcChecksum}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{calcChecksum()}{calcChecksum()}}
+{\footnotesize\ttfamily int calc\+Checksum (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buf,  }\item[{int}]{nbytes }\end{DoxyParamCaption})}
+
+
+
+Calcula o checksum de um buffer de bytes. 
+
+Calcula o checksum de um buffer.
+
+Esta função calcula o checksum de um buffer de bytes e verifica se o checksum calculado corresponde ao checksum esperado. 
+\begin{DoxyParams}{Parameters}
+{\em buf} & Ponteiro para o buffer de bytes. \\
+\hline
+{\em nbytes} & Número de bytes no buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna CMD\+\_\+\+SUCCESS se o checksum estiver correto, ou CMD\+\_\+\+CS\+\_\+\+ERROR se houver um erro no checksum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mock__cmd_8c_a073961baba82f2a2de88774870ab977b}\label{mock__cmd_8c_a073961baba82f2a2de88774870ab977b}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!cmd@{cmd}}
+\index{cmd@{cmd}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{cmd()}{cmd()}}
+{\footnotesize\ttfamily int cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Função para processar comandos recebidos pela UART. 
+
+
+\begin{DoxyItemize}
+\item Esta função analisa os comandos recebidos no buffer de recepção UART e executa as ações correspondentes. 
+\end{DoxyItemize}\mbox{\Hypertarget{mock__cmd_8c_addc390094fe556d15f951c3a2bdbdbe4}\label{mock__cmd_8c_addc390094fe556d15f951c3a2bdbdbe4}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!get\_current\_temp@{get\_current\_temp}}
+\index{get\_current\_temp@{get\_current\_temp}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{get\_current\_temp()}{get\_current\_temp()}}
+{\footnotesize\ttfamily int get\+\_\+current\+\_\+temp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Lê a temperatura atual do sensor. 
+
+Esta função obtém a temperatura atual medida pelo sensor.
+
+\begin{DoxyReturn}{Returns}
+int A temperatura atual. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mock__cmd_8c_a8beeddde9a644610c72724be856db6dd}\label{mock__cmd_8c_a8beeddde9a644610c72724be856db6dd}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!getTxBuffer@{getTxBuffer}}
+\index{getTxBuffer@{getTxBuffer}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{getTxBuffer()}{getTxBuffer()}}
+{\footnotesize\ttfamily void get\+Tx\+Buffer (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buf,  }\item[{int $\ast$}]{len }\end{DoxyParamCaption})}
+
+
+
+Obtém o conteúdo do buffer de transmissão UART. 
+
+Define a temperatura máxima do sistema.
+
+Esta função copia o conteúdo do buffer de transmissão UART para o buffer fornecido e atualiza o comprimento do buffer. 
+\begin{DoxyParams}{Parameters}
+{\em buf} & Ponteiro para o buffer onde o conteúdo será copiado. \\
+\hline
+{\em len} & Ponteiro para um inteiro onde o comprimento do buffer será armazenado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mock__cmd_8c_af7c6e7096a207b3ca99ad9f783aea579}\label{mock__cmd_8c_af7c6e7096a207b3ca99ad9f783aea579}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!intToAscii@{intToAscii}}
+\index{intToAscii@{intToAscii}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{intToAscii()}{intToAscii()}}
+{\footnotesize\ttfamily void int\+To\+Ascii (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Converte um número inteiro em uma representação ASCII. 
+
+
+\begin{DoxyItemize}
+\item Esta função converte um número inteiro em uma string ASCII, desde que o número esteja no intervalo de 1 a 99999. 
+\begin{DoxyParams}{Parameters}
+{\em num} & O número inteiro a ser convertido. \\
+\hline
+{\em str} & O buffer onde a representação ASCII será armazenada.\\
+\hline
+\end{DoxyParams}
+
+\item Esta função verifica se o número é negativo e o converte para positivo antes de a conversão.
+\item Se o número estiver fora do intervalo permitido, a string resultante será vazia. 
+\end{DoxyItemize}\mbox{\Hypertarget{mock__cmd_8c_a918f38a7eecdd03671d28a3a07f94856}\label{mock__cmd_8c_a918f38a7eecdd03671d28a3a07f94856}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!resetRxBuffer@{resetRxBuffer}}
+\index{resetRxBuffer@{resetRxBuffer}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{resetRxBuffer()}{resetRxBuffer()}}
+{\footnotesize\ttfamily void reset\+Rx\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reseta o buffer de recepção UART. 
+
+Esta função limpa o buffer de recepção UART, definindo seu comprimento para zero. \mbox{\Hypertarget{mock__cmd_8c_abd91ad9b5887f4769f45823899583bab}\label{mock__cmd_8c_abd91ad9b5887f4769f45823899583bab}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!resetTxBuffer@{resetTxBuffer}}
+\index{resetTxBuffer@{resetTxBuffer}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{resetTxBuffer()}{resetTxBuffer()}}
+{\footnotesize\ttfamily void reset\+Tx\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reseta o buffer de transmissão UART. 
+
+Esta função limpa o buffer de transmissão UART, definindo seu comprimento para zero. \mbox{\Hypertarget{mock__cmd_8c_a67ae8a79a708a3c5471668bddbd16400}\label{mock__cmd_8c_a67ae8a79a708a3c5471668bddbd16400}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!rxChar@{rxChar}}
+\index{rxChar@{rxChar}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{rxChar()}{rxChar()}}
+{\footnotesize\ttfamily int rx\+Char (\begin{DoxyParamCaption}\item[{unsigned char}]{car }\end{DoxyParamCaption})}
+
+
+
+Envia um caractere para o buffer de recepção UART. 
+
+
+\begin{DoxyItemize}
+\item Esta função adiciona um caractere ao buffer de recepção UART, se o buffer não estiver cheio. 
+\begin{DoxyParams}{Parameters}
+{\em car} & O caractere a ser recebido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 0 se o caractere foi adicionado com sucesso, ou -\/1 se o buffer estiver cheio. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{mock__cmd_8c_a517f5b7a13af4da2c1ba3353f14f7f4d}\label{mock__cmd_8c_a517f5b7a13af4da2c1ba3353f14f7f4d}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!set\_max\_temp@{set\_max\_temp}}
+\index{set\_max\_temp@{set\_max\_temp}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{set\_max\_temp()}{set\_max\_temp()}}
+{\footnotesize\ttfamily void set\+\_\+max\+\_\+temp (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})}
+
+
+
+Define a temperatura máxima do sistema. 
+
+Esta função atualiza a temperatura máxima permitida no sistema. \mbox{\Hypertarget{mock__cmd_8c_abdb4363f0662688850bbcdfb59ce4566}\label{mock__cmd_8c_abdb4363f0662688850bbcdfb59ce4566}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!txChar@{txChar}}
+\index{txChar@{txChar}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{txChar()}{txChar()}}
+{\footnotesize\ttfamily int tx\+Char (\begin{DoxyParamCaption}\item[{unsigned char}]{car }\end{DoxyParamCaption})}
+
+
+
+Envia um caractere para o buffer de transmissão UART. 
+
+
+\begin{DoxyItemize}
+\item Esta função adiciona um caractere ao buffer de transmissão UART, se o buffer não estiver cheio. 
+\begin{DoxyParams}{Parameters}
+{\em car} & O caractere a ser enviado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 0 se o caractere foi adicionado com sucesso, ou -\/1 se o buffer estiver cheio. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mock__cmd_8c_a823a4908418667c2d93e1c049a1795d9}\label{mock__cmd_8c_a823a4908418667c2d93e1c049a1795d9}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!rxBufLen@{rxBufLen}}
+\index{rxBufLen@{rxBufLen}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{rxBufLen}{rxBufLen}}
+{\footnotesize\ttfamily unsigned char rx\+Buf\+Len = 0}
+
+
+
+Tamanho atual do buffer de recepção UART. 
+
+Comprimento atual do buffer de recepção UART.
+
+Indica o número de bytes atualmente armazenados no buffer de recepção UART. \mbox{\Hypertarget{mock__cmd_8c_ae8ecfc303888ce93c420f8052dfca1ce}\label{mock__cmd_8c_ae8ecfc303888ce93c420f8052dfca1ce}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!txBufLen@{txBufLen}}
+\index{txBufLen@{txBufLen}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{txBufLen}{txBufLen}}
+{\footnotesize\ttfamily unsigned char tx\+Buf\+Len = 0}
+
+
+
+Tamanho atual do buffer de transmissão UART. 
+
+Comprimento atual do buffer de transmissão UART.
+
+Indica o número de bytes atualmente armazenados no buffer de transmissão UART. \mbox{\Hypertarget{mock__cmd_8c_ae6c75dafeeb8601334ce3cbe089987dd}\label{mock__cmd_8c_ae6c75dafeeb8601334ce3cbe089987dd}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!UARTRxBuffer@{UARTRxBuffer}}
+\index{UARTRxBuffer@{UARTRxBuffer}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{UARTRxBuffer}{UARTRxBuffer}}
+{\footnotesize\ttfamily unsigned char UARTRx\+Buffer\mbox{[}\mbox{\hyperlink{mock__cmd_8h_a7e4912ef6d5612f8ebca463ff206d9ce}{UART\+\_\+\+RX\+\_\+\+SIZE}}\mbox{]}}
+
+
+
+Tamanho máximo do buffer de recepção UART. 
+
+Buffer de recepção UART.
+
+Define o tamanho máximo do buffer de recepção UART. \mbox{\Hypertarget{mock__cmd_8c_a7801926b7e176ac7223f324794874a2b}\label{mock__cmd_8c_a7801926b7e176ac7223f324794874a2b}} 
+\index{mock\_cmd.c@{mock\_cmd.c}!UARTTxBuffer@{UARTTxBuffer}}
+\index{UARTTxBuffer@{UARTTxBuffer}!mock\_cmd.c@{mock\_cmd.c}}
+\doxysubsubsection{\texorpdfstring{UARTTxBuffer}{UARTTxBuffer}}
+{\footnotesize\ttfamily unsigned char UARTTx\+Buffer\mbox{[}\mbox{\hyperlink{mock__cmd_8h_a7bd31e3844f5461db2cbe6d906ca4040}{UART\+\_\+\+TX\+\_\+\+SIZE}}\mbox{]}}
+
+
+
+Tamanho máximo do buffer de transmissão UART. 
+
+Buffer de transmissão UART.
+
+Define o tamanho máximo do buffer de transmissão UART. 

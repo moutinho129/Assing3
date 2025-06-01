@@ -1,0 +1,63 @@
+\hypertarget{mock__task_8c}{}\doxysection{teste/mock\+\_\+task.c File Reference}
+\label{mock__task_8c}\index{teste/mock\_task.c@{teste/mock\_task.c}}
+
+
+Ficheiro de criado para simular o comportamento das tasks do sistema SETR Mini-\/\+Projeto.  
+
+
+{\ttfamily \#include \char`\"{}mock\+\_\+task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mock\+\_\+zephyr.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for mock\+\_\+task.\+c\+:
+% FIG 0
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRTDB}{RTDB}} \mbox{\hyperlink{mock__task_8c_a5047ee7b772d7f5f69a1cd0ef2f83f32}{db}}
+\item 
+struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} \mbox{\hyperlink{mock__task_8c_a6d2bc6e8daf73029e362c7456a9b5e7d}{db\+\_\+lock}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro de criado para simular o comportamento das tasks do sistema SETR Mini-\/\+Projeto. 
+
+
+\begin{DoxyItemize}
+\item Este ficheiro contém a implementação das funções que foram declaradas no ficheiro \mbox{\hyperlink{mock__task_8h}{mock\+\_\+task.\+h}}.
+\item Este ficheiro é idêntico ao ficheiro \mbox{\hyperlink{task_8c}{task.\+c}}, mas é usado para Unit Testing.
+\item \begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180
+\end{DoxyAuthor}
+
+\item \begin{DoxyDate}{Date}
+2025/06/01
+\end{DoxyDate}
+
+\item \begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]Desconhecidos \end{DoxyRefDesc}
+
+\end{DoxyItemize}
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mock__task_8c_a5047ee7b772d7f5f69a1cd0ef2f83f32}\label{mock__task_8c_a5047ee7b772d7f5f69a1cd0ef2f83f32}} 
+\index{mock\_task.c@{mock\_task.c}!db@{db}}
+\index{db@{db}!mock\_task.c@{mock\_task.c}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRTDB}{RTDB}} db}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .system\_on = 0,}
+\DoxyCodeLine{    .max\_temp = 30,      }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+Variável global da \mbox{\hyperlink{structRTDB}{RTDB}} partilhada entre as tasks \mbox{\Hypertarget{mock__task_8c_a6d2bc6e8daf73029e362c7456a9b5e7d}\label{mock__task_8c_a6d2bc6e8daf73029e362c7456a9b5e7d}} 
+\index{mock\_task.c@{mock\_task.c}!db\_lock@{db\_lock}}
+\index{db\_lock@{db\_lock}!mock\_task.c@{mock\_task.c}}
+\doxysubsubsection{\texorpdfstring{db\_lock}{db\_lock}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} db\+\_\+lock}
+
+Mutex global para acesso concorrente à \mbox{\hyperlink{structRTDB}{RTDB}} 

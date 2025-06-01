@@ -1,0 +1,14 @@
+digraph "teste/mock_task.c"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="teste/mock_task.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Ficheiro de criado para simular o comportamento das tasks do sistema SETR Mini-Projeto."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="mock_task.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mock__task_8h.html",tooltip="Cabeçalho para simulação de tarefas do sistema SETR Mini-Projeto."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="mock_zephyr.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mock__zephyr_8h.html",tooltip="Cabeçalho para simulação do Zephyr RTOS em testes unitários."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="stdlib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

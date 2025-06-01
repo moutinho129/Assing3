@@ -7,9 +7,11 @@ digraph "include/task.h"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node2 [label="src/button_task.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$button__task_8c.html",tooltip="Funções usadas na task responsável pela leitura dos botões físicos e atualização da RTDB."];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 [label="src/led_task.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$led__task_8c.html",tooltip="Funções usadas na task responsável por controlar os LEDs do sistema."];
+  Node3 [label="src/cmd.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cmd_8c.html",tooltip="Ficheiro para teste dos comandos do sistema SETR Mini-Projeto."];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node4 [label="src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Ficheiro principal do projeto SETR Mini-Projeto."];
+  Node4 [label="src/led_task.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$led__task_8c.html",tooltip="Funções usadas na task responsável por controlar os LEDs do sistema."];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node5 [label="src/task.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$task_8c.html",tooltip="Funções usadas nas tasks do sistema SETR Mini-Projeto."];
+  Node5 [label="src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html",tooltip="Ficheiro principal do projeto SETR Mini-Projeto."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="src/task.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$task_8c.html",tooltip="Funções usadas nas tasks do sistema SETR Mini-Projeto."];
 }
