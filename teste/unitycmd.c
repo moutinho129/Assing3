@@ -10,7 +10,7 @@
  * * @bug Desconhecidos
  * 
  */
-#include "unity.h"       
+#include "../unity/unity.h"       
 #include "mock_cmd.h"
 #include "mock_task.h"      
 #include "mock_zephyr.h"
