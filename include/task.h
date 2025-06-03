@@ -9,10 +9,11 @@
  *  @date 2025/05/29
  */
 
- #ifndef TASK_H
+#ifndef TASK_H
 #define TASK_H
 
 #include <zephyr/kernel.h>
+
 
 /**
  * @struct RTDB
@@ -24,8 +25,9 @@ struct RTDB {
     int system_on;      
     int max_temp;       
     int target_temp;  
-    int adc_val;        
+    int i2c_val;        
     int current_temp;  
+    int hysteresis;
 };
 
 
@@ -36,5 +38,6 @@ extern struct RTDB db;
 /** Mutex global para acesso concorrente à RTDB */
 extern struct k_mutex db_lock;
 
+void init_rtdb(void);
 
 #endif

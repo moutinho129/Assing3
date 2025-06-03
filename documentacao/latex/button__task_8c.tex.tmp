@@ -16,11 +16,14 @@ Include dependency graph for button\+\_\+task.\+c\+:
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{button__task_8c_a96f7d37676c3ecbc7612d50eec3e54ff}{BTN1\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(sw0)
+\mbox{\Hypertarget{button__task_8c_a96f7d37676c3ecbc7612d50eec3e54ff}\label{button__task_8c_a96f7d37676c3ecbc7612d50eec3e54ff}} 
+\#define {\bfseries BTN1\+\_\+\+NODE}~DT\+\_\+\+ALIAS(sw0)
 \item 
-\#define \mbox{\hyperlink{button__task_8c_ad059574f42bfa0704ad3c465e96785ad}{BTN2\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(sw1)
+\mbox{\Hypertarget{button__task_8c_ad059574f42bfa0704ad3c465e96785ad}\label{button__task_8c_ad059574f42bfa0704ad3c465e96785ad}} 
+\#define {\bfseries BTN2\+\_\+\+NODE}~DT\+\_\+\+ALIAS(sw1)
 \item 
-\#define \mbox{\hyperlink{button__task_8c_a03c1f2e5f234ed947571598bea2ec03b}{BTN4\+\_\+\+NODE}}~DT\+\_\+\+ALIAS(sw3)
+\mbox{\Hypertarget{button__task_8c_a03c1f2e5f234ed947571598bea2ec03b}\label{button__task_8c_a03c1f2e5f234ed947571598bea2ec03b}} 
+\#define {\bfseries BTN4\+\_\+\+NODE}~DT\+\_\+\+ALIAS(sw3)
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -40,27 +43,6 @@ Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180
 \begin{DoxyDate}{Date}
 2025/05/29 
 \end{DoxyDate}
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{button__task_8c_a96f7d37676c3ecbc7612d50eec3e54ff}\label{button__task_8c_a96f7d37676c3ecbc7612d50eec3e54ff}} 
-\index{button\_task.c@{button\_task.c}!BTN1\_NODE@{BTN1\_NODE}}
-\index{BTN1\_NODE@{BTN1\_NODE}!button\_task.c@{button\_task.c}}
-\doxysubsubsection{\texorpdfstring{BTN1\_NODE}{BTN1\_NODE}}
-{\footnotesize\ttfamily \#define BTN1\+\_\+\+NODE~DT\+\_\+\+ALIAS(sw0)}
-
-\mbox{\Hypertarget{button__task_8c_ad059574f42bfa0704ad3c465e96785ad}\label{button__task_8c_ad059574f42bfa0704ad3c465e96785ad}} 
-\index{button\_task.c@{button\_task.c}!BTN2\_NODE@{BTN2\_NODE}}
-\index{BTN2\_NODE@{BTN2\_NODE}!button\_task.c@{button\_task.c}}
-\doxysubsubsection{\texorpdfstring{BTN2\_NODE}{BTN2\_NODE}}
-{\footnotesize\ttfamily \#define BTN2\+\_\+\+NODE~DT\+\_\+\+ALIAS(sw1)}
-
-\mbox{\Hypertarget{button__task_8c_a03c1f2e5f234ed947571598bea2ec03b}\label{button__task_8c_a03c1f2e5f234ed947571598bea2ec03b}} 
-\index{button\_task.c@{button\_task.c}!BTN4\_NODE@{BTN4\_NODE}}
-\index{BTN4\_NODE@{BTN4\_NODE}!button\_task.c@{button\_task.c}}
-\doxysubsubsection{\texorpdfstring{BTN4\_NODE}{BTN4\_NODE}}
-{\footnotesize\ttfamily \#define BTN4\+\_\+\+NODE~DT\+\_\+\+ALIAS(sw3)}
-
 
 
 \doxysubsection{Function Documentation}

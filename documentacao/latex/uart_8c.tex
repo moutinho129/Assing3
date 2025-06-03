@@ -1,0 +1,57 @@
+\hypertarget{uart_8c}{}\doxysection{src/uart.c File Reference}
+\label{uart_8c}\index{src/uart.c@{src/uart.c}}
+
+
+Ficheiro responsável pela tarefa de comunicação UART. Lê dados da UART de forma síncrona e executa comandos recebidos. Envia respostas de volta pela UART.  
+
+
+{\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/device.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/drivers/uart.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/sys/printk.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/cmd.\+h\char`\"{}}\newline
+Include dependency graph for uart.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{uart_8c_a07b40c5bd9acc44f62a9182527dbcc9b}\label{uart_8c_a07b40c5bd9acc44f62a9182527dbcc9b}} 
+\#define {\bfseries UART\+\_\+\+NODE}~DT\+\_\+\+NODELABEL(uart0)
+\item 
+\mbox{\Hypertarget{uart_8c_a630686ccbe0cb17e592951055a5da582}\label{uart_8c_a630686ccbe0cb17e592951055a5da582}} 
+\#define {\bfseries RXBUF\+\_\+\+SIZE}~128
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uart_8c_aac4c92fd5bb979408d209ca8e7c3865c}{uart\+\_\+task}} (void)
+\begin{DoxyCompactList}\small\item\em Tarefa de leitura da UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro responsável pela tarefa de comunicação UART. Lê dados da UART de forma síncrona e executa comandos recebidos. Envia respostas de volta pela UART. 
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/06/03 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]comandos com mais de 7 caracteres não são lidos corretamente\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uart_8c_aac4c92fd5bb979408d209ca8e7c3865c}\label{uart_8c_aac4c92fd5bb979408d209ca8e7c3865c}} 
+\index{uart.c@{uart.c}!uart\_task@{uart\_task}}
+\index{uart\_task@{uart\_task}!uart.c@{uart.c}}
+\doxysubsubsection{\texorpdfstring{uart\_task()}{uart\_task()}}
+{\footnotesize\ttfamily void uart\+\_\+task (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Tarefa de leitura da UART. 
+
+Lê dados da UART de forma síncrona, armazena os caracteres recebidos em um buffer e executa comandos quando uma linha completa é recebida (terminada por \textquotesingle{}~\newline
+\textquotesingle{} ou \textquotesingle{}\textbackslash{}r\textquotesingle{}). Respostas são enviadas de volta pela UART. 

@@ -8,19 +8,36 @@
  * @date 2025/05/29
  */
 
- #include <zephyr/kernel.h>
+#include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 #include <stdlib.h>
-#include "task.h"
+#include "../include/task.h"
+#include "../include/control_task.h"
+#include "../include/button_task.h"
+#include "../include/led_task.h"
+#include "../include/cmd.h"
+#include "../include/uart.h"
+#include "../include/temp_task.h"
 
-void button_task(void *, void *, void *);
-void led_task(void *, void *, void *);
+
 
 /** Cria e inicia a thread da tarefa de leitura dos botões */
-K_THREAD_DEFINE(button,1024,button_task,NULL,NULL,NULL,5,0,0);
+K_THREAD_DEFINE(button_tid,512,button_task,NULL,NULL,NULL,5,0,0);
 
 /** Cria e inicia a thread da tarefa de controlo dos LEDs */
-K_THREAD_DEFINE(led,1024,led_task,NULL,NULL,NULL,5,0,0);
+K_THREAD_DEFINE(led_tid,512,led_task,NULL,NULL,NULL,5,0,0);
+
+/** Cria e inicia a thread da tarefa de controlo da temperatura */
+K_THREAD_DEFINE(temp_tid,   512, temp_task,   NULL, NULL, NULL, 5, 0,0);
+
+/** Cria e inicia a thread da tarefa de controlo do sistema */
+K_THREAD_DEFINE(ctrl_tid,   512, control_task,NULL, NULL, NULL, 5, 0, 0);
+
+/** Cria e inicia a thread da tarefa de comunicação UART */
+//K_THREAD_DEFINE(uart_tid, 512, uart_task, NULL, NULL, NULL, 5, 0, 0);
+
+
+
 
 /**
  * @brief Função principal do sistema.
@@ -33,12 +50,15 @@ K_THREAD_DEFINE(led,1024,led_task,NULL,NULL,NULL,5,0,0);
  */
 void main(void)
 {
-    printk("Assign3: a correr!\n");
+    printk("Assign3: a correr! \n");
+    init_rtdb();
+    //uart_init();
+    uart_task(); 
+      while (1) {
+        k_sleep(K_SECONDS(1000));   
+    } 
+
+    // Inicializa o mutex global para acesso concorrente à RTDB
     k_mutex_init(&db_lock);
 
-    while (1) {
-        k_sleep(K_SECONDS(1));
-    }
 }
-
-

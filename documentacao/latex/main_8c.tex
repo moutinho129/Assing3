@@ -8,19 +8,25 @@ Ficheiro principal do projeto SETR Mini-\/\+Projeto.
 {\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
 {\ttfamily \#include $<$zephyr/sys/printk.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/control\+\_\+task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/button\+\_\+task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/led\+\_\+task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/cmd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/uart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/temp\+\_\+task.\+h\char`\"{}}\newline
 Include dependency graph for main.\+c\+:
 % FIG 0
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{main_8c_af099339d864d921d7d0f35ae14377822}{button\+\_\+task}} (void $\ast$, void $\ast$, void $\ast$)
-\begin{DoxyCompactList}\small\item\em Tarefa responsável pela leitura dos botões físicos. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{main_8c_a7b3e4b46191b348e298c3fc3e26a834e}{led\+\_\+task}} (void $\ast$, void $\ast$, void $\ast$)
-\begin{DoxyCompactList}\small\item\em Tarefa responsável pela atualização dos LEDs do sistema. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{main_8c_a537dec74a6f913b1b6123a254ab8fe3c}{K\+\_\+\+THREAD\+\_\+\+DEFINE}} (button, 1024, \mbox{\hyperlink{button__task_8h_a28ab112818948e6ca985fd71d7f54533}{button\+\_\+task}}, NULL, NULL, NULL, 5, 0, 0)
+\mbox{\hyperlink{main_8c_ad3cc98fb77974a80b6fc5d51c604a282}{K\+\_\+\+THREAD\+\_\+\+DEFINE}} (button\+\_\+tid, 512, \mbox{\hyperlink{button__task_8c_a28ab112818948e6ca985fd71d7f54533}{button\+\_\+task}}, NULL, NULL, NULL, 5, 0, 0)
 \item 
-\mbox{\hyperlink{main_8c_a18c64b0389c416f0718dd1e6440f2ed5}{K\+\_\+\+THREAD\+\_\+\+DEFINE}} (led, 1024, \mbox{\hyperlink{led__task_8h_a8ee90e672bf1005d9c6844f8aa898eae}{led\+\_\+task}}, NULL, NULL, NULL, 5, 0, 0)
+\mbox{\hyperlink{main_8c_a5670bd91ed0915bdf021ae38b18409e0}{K\+\_\+\+THREAD\+\_\+\+DEFINE}} (led\+\_\+tid, 512, \mbox{\hyperlink{led__task_8c_a8ee90e672bf1005d9c6844f8aa898eae}{led\+\_\+task}}, NULL, NULL, NULL, 5, 0, 0)
+\item 
+\mbox{\hyperlink{main_8c_a7165653e9f19130d6b894cfd4db02c0a}{K\+\_\+\+THREAD\+\_\+\+DEFINE}} (temp\+\_\+tid, 512, temp\+\_\+task, NULL, NULL, NULL, 5, 0, 0)
+\item 
+\mbox{\hyperlink{main_8c_a7e0da41ca09b478ace41616077368e00}{K\+\_\+\+THREAD\+\_\+\+DEFINE}} (ctrl\+\_\+tid, 512, \mbox{\hyperlink{control__task_8h_a2d4608c6aa03f08b1ebfa53d641bf0e8}{control\+\_\+task}}, NULL, NULL, NULL, 5, 0, 0)
 \item 
 void \mbox{\hyperlink{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{main}} (void)
 \begin{DoxyCompactList}\small\item\em Função principal do sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -40,74 +46,31 @@ Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{main_8c_af099339d864d921d7d0f35ae14377822}\label{main_8c_af099339d864d921d7d0f35ae14377822}} 
-\index{main.c@{main.c}!button\_task@{button\_task}}
-\index{button\_task@{button\_task}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{button\_task()}{button\_task()}}
-{\footnotesize\ttfamily void button\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{a,  }\item[{void $\ast$}]{b,  }\item[{void $\ast$}]{c }\end{DoxyParamCaption})}
-
-
-
-Tarefa responsável pela leitura dos botões físicos. 
-
-Lê os botões definidos no sistema\+:
-\begin{DoxyItemize}
-\item Botão 1\+: Liga/desliga o sistema
-\item Botão 2\+: Aumenta o setpoint
-\item Botão 4\+: Diminui o setpoint
-\end{DoxyItemize}
-
-Atualiza a \mbox{\hyperlink{structRTDB}{RTDB}} com base nas interações do utilizador.
-
-
-\begin{DoxyParams}{Parameters}
-{\em a} & Ponteiro genérico (não utilizado) \\
-\hline
-{\em b} & Ponteiro genérico (não utilizado) \\
-\hline
-{\em c} & Ponteiro genérico (não utilizado) \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{main_8c_a537dec74a6f913b1b6123a254ab8fe3c}\label{main_8c_a537dec74a6f913b1b6123a254ab8fe3c}} 
+\mbox{\Hypertarget{main_8c_ad3cc98fb77974a80b6fc5d51c604a282}\label{main_8c_ad3cc98fb77974a80b6fc5d51c604a282}} 
 \index{main.c@{main.c}!K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}}
 \index{K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{K\_THREAD\_DEFINE()}{K\_THREAD\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily K\+\_\+\+THREAD\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{button}]{,  }\item[{1024}]{,  }\item[{\mbox{\hyperlink{button__task_8h_a28ab112818948e6ca985fd71d7f54533}{button\+\_\+task}}}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{5}]{,  }\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{K\_THREAD\_DEFINE()}{K\_THREAD\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily K\+\_\+\+THREAD\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{button\+\_\+tid}]{,  }\item[{512}]{,  }\item[{\mbox{\hyperlink{button__task_8c_a28ab112818948e6ca985fd71d7f54533}{button\+\_\+task}}}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{5}]{,  }\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
 
-Cria e inicia a thread da tarefa de leitura dos botões \mbox{\Hypertarget{main_8c_a18c64b0389c416f0718dd1e6440f2ed5}\label{main_8c_a18c64b0389c416f0718dd1e6440f2ed5}} 
+Cria e inicia a thread da tarefa de leitura dos botões \mbox{\Hypertarget{main_8c_a7e0da41ca09b478ace41616077368e00}\label{main_8c_a7e0da41ca09b478ace41616077368e00}} 
 \index{main.c@{main.c}!K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}}
 \index{K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{K\_THREAD\_DEFINE()}{K\_THREAD\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily K\+\_\+\+THREAD\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{led}]{,  }\item[{1024}]{,  }\item[{\mbox{\hyperlink{led__task_8h_a8ee90e672bf1005d9c6844f8aa898eae}{led\+\_\+task}}}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{5}]{,  }\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{K\_THREAD\_DEFINE()}{K\_THREAD\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily K\+\_\+\+THREAD\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{ctrl\+\_\+tid}]{,  }\item[{512}]{,  }\item[{\mbox{\hyperlink{control__task_8h_a2d4608c6aa03f08b1ebfa53d641bf0e8}{control\+\_\+task}}}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{5}]{,  }\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
 
-Cria e inicia a thread da tarefa de controlo dos LEDs \mbox{\Hypertarget{main_8c_a7b3e4b46191b348e298c3fc3e26a834e}\label{main_8c_a7b3e4b46191b348e298c3fc3e26a834e}} 
-\index{main.c@{main.c}!led\_task@{led\_task}}
-\index{led\_task@{led\_task}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{led\_task()}{led\_task()}}
-{\footnotesize\ttfamily void led\+\_\+task (\begin{DoxyParamCaption}\item[{void $\ast$}]{a,  }\item[{void $\ast$}]{b,  }\item[{void $\ast$}]{c }\end{DoxyParamCaption})}
+Cria e inicia a thread da tarefa de controlo do sistema \mbox{\Hypertarget{main_8c_a5670bd91ed0915bdf021ae38b18409e0}\label{main_8c_a5670bd91ed0915bdf021ae38b18409e0}} 
+\index{main.c@{main.c}!K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}}
+\index{K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{K\_THREAD\_DEFINE()}{K\_THREAD\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily K\+\_\+\+THREAD\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{led\+\_\+tid}]{,  }\item[{512}]{,  }\item[{\mbox{\hyperlink{led__task_8c_a8ee90e672bf1005d9c6844f8aa898eae}{led\+\_\+task}}}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{5}]{,  }\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
 
+Cria e inicia a thread da tarefa de controlo dos LEDs \mbox{\Hypertarget{main_8c_a7165653e9f19130d6b894cfd4db02c0a}\label{main_8c_a7165653e9f19130d6b894cfd4db02c0a}} 
+\index{main.c@{main.c}!K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}}
+\index{K\_THREAD\_DEFINE@{K\_THREAD\_DEFINE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{K\_THREAD\_DEFINE()}{K\_THREAD\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily K\+\_\+\+THREAD\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{temp\+\_\+tid}]{,  }\item[{512}]{,  }\item[{temp\+\_\+task}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{NULL}]{,  }\item[{5}]{,  }\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
 
-
-Tarefa responsável pela atualização dos LEDs do sistema. 
-
-Atualiza os LEDs com base no estado atual do sistema, conforme definido na \mbox{\hyperlink{structRTDB}{RTDB}}\+:
-\begin{DoxyItemize}
-\item LED1\+: Sistema ligado/desligado
-\item LED2\+: Estado normal (±2°C do setpoint)
-\item LED3\+: Temperatura abaixo do alvo
-\item LED4\+: Temperatura acima do alvo
-\end{DoxyItemize}
-
-
-\begin{DoxyParams}{Parameters}
-{\em a} & Ponteiro genérico (não utilizado) \\
-\hline
-{\em b} & Ponteiro genérico (não utilizado) \\
-\hline
-{\em c} & Ponteiro genérico (não utilizado) \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}\label{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}} 
+Cria e inicia a thread da tarefa de controlo da temperatura \mbox{\Hypertarget{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}\label{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}} 
 \index{main.c@{main.c}!main@{main}}
 \index{main@{main}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
@@ -116,6 +79,8 @@ Atualiza os LEDs com base no estado atual do sistema, conforme definido na \mbox
 
 
 Função principal do sistema. 
+
+Cria e inicia a thread da tarefa de comunicação UART
 
 Inicializa o mutex global e cria as threads para as tarefas do sistema\+:
 \begin{DoxyItemize}

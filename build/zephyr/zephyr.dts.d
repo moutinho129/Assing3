@@ -24,4 +24,5 @@ empty_file.o: /home/moutinho/ncs/v2.6.0/zephyr/misc/empty_file.c \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/dt-bindings/pwm/pwm.h \
  /home/moutinho/ncs/v2.6.0/zephyr/dts/common/freq.h \
  /home/moutinho/ncs/v2.6.0/zephyr/dts/arm/nordic/override.dtsi \
- /home/moutinho/ncs/v2.6.0/zephyr/boards/arm/nrf52840dk_nrf52840/nrf52840dk_nrf52840-pinctrl.dtsi
+ /home/moutinho/ncs/v2.6.0/zephyr/boards/arm/nrf52840dk_nrf52840/nrf52840dk_nrf52840-pinctrl.dtsi \
+ /home/moutinho/Desktop/assing3/boards/nrf52840dk_nrf52840.overlay

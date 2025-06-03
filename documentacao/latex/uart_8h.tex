@@ -1,0 +1,58 @@
+\hypertarget{uart_8h}{}\doxysection{include/uart.h File Reference}
+\label{uart_8h}\index{include/uart.h@{include/uart.h}}
+
+
+Ficheiro de cabeçalho para a tarefa de comunicação UART.  
+
+
+{\ttfamily \#include $<$zephyr/drivers/uart.\+h$>$}\newline
+Include dependency graph for uart.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uart_8h_aac4c92fd5bb979408d209ca8e7c3865c}{uart\+\_\+task}} (void)
+\begin{DoxyCompactList}\small\item\em Tarefa de leitura da UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro de cabeçalho para a tarefa de comunicação UART. 
+
+
+\begin{DoxyItemize}
+\item Define a função de leitura da UART que processa comandos recebidos e envia respostas.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/06/03 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000002}{Bug}}]Comandos com mais de 7 caracteres não são lidos corretamente\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uart_8h_aac4c92fd5bb979408d209ca8e7c3865c}\label{uart_8h_aac4c92fd5bb979408d209ca8e7c3865c}} 
+\index{uart.h@{uart.h}!uart\_task@{uart\_task}}
+\index{uart\_task@{uart\_task}!uart.h@{uart.h}}
+\doxysubsubsection{\texorpdfstring{uart\_task()}{uart\_task()}}
+{\footnotesize\ttfamily void uart\+\_\+task (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Tarefa de leitura da UART. 
+
+
+\begin{DoxyItemize}
+\item Lê dados da UART de forma síncrona, armazena os caracteres recebidos em um buffer
+\item e executa comandos quando uma linha completa é recebida (terminada por \textquotesingle{}~\newline
+\textquotesingle{} ou \textquotesingle{}\textbackslash{}r\textquotesingle{}).
+\item Respostas são enviadas de volta pela UART.
+\end{DoxyItemize}
+
+Lê dados da UART de forma síncrona, armazena os caracteres recebidos em um buffer e executa comandos quando uma linha completa é recebida (terminada por \textquotesingle{}~\newline
+\textquotesingle{} ou \textquotesingle{}\textbackslash{}r\textquotesingle{}). Respostas são enviadas de volta pela UART. 

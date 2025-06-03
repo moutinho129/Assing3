@@ -8,7 +8,9 @@
   ],
   "optimizations": "none",
   "cmakeArgs": [],
-  "confFiles": [],
+  "confFiles": [
+    "prj.conf"
+  ],
   "buildDirectory": "build",
   "kconfigFragments": [],
   "snippets": [],

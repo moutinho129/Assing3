@@ -1,1 +1,2 @@
+osource "/home/moutinho/Desktop/assing3/boards/shields/*/Kconfig.shield"
 osource "/home/moutinho/ncs/v2.6.0/nrf/boards/shields/*/Kconfig.shield"

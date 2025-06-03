@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mini-project SETR: src/cmd.c File Reference</title>
+<title>Projeto SETR: src/cmd.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Mini-project SETR
+   <div id="projectname">Projeto SETR
    </div>
+   <div id="projectbrief">Mini-projeto de SETR, Prototyping a thermal process control system</div>
   </td>
  </tr>
  </tbody>
@@ -66,7 +67,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">cmd.c File Reference</div>  </div>
 </div><!--header-->
@@ -94,9 +96,9 @@ Functions</h2></td></tr>
 <tr class="memitem:addc390094fe556d15f951c3a2bdbdbe4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8c.html#addc390094fe556d15f951c3a2bdbdbe4">get_current_temp</a> (void)</td></tr>
 <tr class="memdesc:addc390094fe556d15f951c3a2bdbdbe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê a temperatura atual do sensor.  <a href="cmd_8c.html#addc390094fe556d15f951c3a2bdbdbe4">More...</a><br /></td></tr>
 <tr class="separator:addc390094fe556d15f951c3a2bdbdbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a073961baba82f2a2de88774870ab977b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8c.html#a073961baba82f2a2de88774870ab977b">cmd</a> (void)</td></tr>
-<tr class="memdesc:a073961baba82f2a2de88774870ab977b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para processar comandos recebidos pela UART.  <a href="cmd_8c.html#a073961baba82f2a2de88774870ab977b">More...</a><br /></td></tr>
-<tr class="separator:a073961baba82f2a2de88774870ab977b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbda56739b42a3e0d02f7c2f6e34fecb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8c.html#acbda56739b42a3e0d02f7c2f6e34fecb">cmd</a> (const uint8_t *cmd_buf, int nchar)</td></tr>
+<tr class="memdesc:acbda56739b42a3e0d02f7c2f6e34fecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para processar comandos recebidos pela UART.  <a href="cmd_8c.html#acbda56739b42a3e0d02f7c2f6e34fecb">More...</a><br /></td></tr>
+<tr class="separator:acbda56739b42a3e0d02f7c2f6e34fecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a0e03d8d8ff0f0459f7623ffd6d39b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8c.html#a2a0e03d8d8ff0f0459f7623ffd6d39b1">calcChecksum</a> (unsigned char *buf, int nbytes)</td></tr>
 <tr class="memdesc:a2a0e03d8d8ff0f0459f7623ffd6d39b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o checksum de um buffer de bytes.  <a href="cmd_8c.html#a2a0e03d8d8ff0f0459f7623ffd6d39b1">More...</a><br /></td></tr>
 <tr class="separator:a2a0e03d8d8ff0f0459f7623ffd6d39b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,13 +120,28 @@ Functions</h2></td></tr>
 <tr class="memitem:a8beeddde9a644610c72724be856db6dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8c.html#a8beeddde9a644610c72724be856db6dd">getTxBuffer</a> (unsigned char *buf, int *len)</td></tr>
 <tr class="memdesc:a8beeddde9a644610c72724be856db6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o conteúdo do buffer de transmissão UART.  <a href="cmd_8c.html#a8beeddde9a644610c72724be856db6dd">More...</a><br /></td></tr>
 <tr class="separator:a8beeddde9a644610c72724be856db6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae6c75dafeeb8601334ce3cbe089987dd"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8c.html#ae6c75dafeeb8601334ce3cbe089987dd">UARTRxBuffer</a> [UART_RX_SIZE]</td></tr>
+<tr class="memdesc:ae6c75dafeeb8601334ce3cbe089987dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer de recepção UART.  <a href="cmd_8c.html#ae6c75dafeeb8601334ce3cbe089987dd">More...</a><br /></td></tr>
+<tr class="separator:ae6c75dafeeb8601334ce3cbe089987dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7801926b7e176ac7223f324794874a2b"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8c.html#a7801926b7e176ac7223f324794874a2b">UARTTxBuffer</a> [UART_TX_SIZE]</td></tr>
+<tr class="memdesc:a7801926b7e176ac7223f324794874a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer de transmissão UART.  <a href="cmd_8c.html#a7801926b7e176ac7223f324794874a2b">More...</a><br /></td></tr>
+<tr class="separator:a7801926b7e176ac7223f324794874a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a823a4908418667c2d93e1c049a1795d9"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8c.html#a823a4908418667c2d93e1c049a1795d9">rxBufLen</a> = 0</td></tr>
+<tr class="memdesc:a823a4908418667c2d93e1c049a1795d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprimento atual do buffer de recepção UART.  <a href="cmd_8c.html#a823a4908418667c2d93e1c049a1795d9">More...</a><br /></td></tr>
+<tr class="separator:a823a4908418667c2d93e1c049a1795d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8ecfc303888ce93c420f8052dfca1ce"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8c.html#ae8ecfc303888ce93c420f8052dfca1ce">txBufLen</a> = 0</td></tr>
+<tr class="memdesc:ae8ecfc303888ce93c420f8052dfca1ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprimento atual do buffer de transmissão UART.  <a href="cmd_8c.html#ae8ecfc303888ce93c420f8052dfca1ce">More...</a><br /></td></tr>
+<tr class="separator:ae8ecfc303888ce93c420f8052dfca1ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Ficheiro para teste dos comandos do sistema SETR Mini-Projeto. </p>
 <p>Este ficheiro contém a implementação das funções que foram declaradas no ficheiro <a class="el" href="cmd_8h.html" title="Ficheiro de cabeçalho para teste dos comandos do sistema SETR Mini-Projeto.">cmd.h</a>. #Mxxxyyy! - Define a temperatura máxima do sistema (xxx é o valor da temperatura máxima, yyy é o checksum). #Cyyy! - Lê a temperatura atual do sensor (retorna a temperatura atual, seguida do checksum). #Sxxxxyyy! - Define os parâmetros do PID (Kp, Ti, Td) do sistema (xxx são os parametros (Kp, Ti, Td), yyy é o checksum).</p>
 <dl class="section author"><dt>Author</dt><dd>Nuno Moutinho - 98626 e João Ferreira - 98180 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025/06/01 </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>Desconhecidos</dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000003">Bug:</a></b></dt><dd>Desconhecidos</dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a2a0e03d8d8ff0f0459f7623ffd6d39b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a0e03d8d8ff0f0459f7623ffd6d39b1">&#9670;&nbsp;</a></span>calcChecksum()</h2>
@@ -165,8 +182,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a073961baba82f2a2de88774870ab977b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a073961baba82f2a2de88774870ab977b">&#9670;&nbsp;</a></span>cmd()</h2>
+<a id="acbda56739b42a3e0d02f7c2f6e34fecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbda56739b42a3e0d02f7c2f6e34fecb">&#9670;&nbsp;</a></span>cmd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,9 +191,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int cmd </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>cmd_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nchar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -409,6 +436,83 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int Retorna 0 se o caractere foi adicionado com sucesso, ou -1 se o buffer estiver cheio. </dd></dl>
 </li>
+</ul>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a823a4908418667c2d93e1c049a1795d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a823a4908418667c2d93e1c049a1795d9">&#9670;&nbsp;</a></span>rxBufLen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char rxBufLen = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprimento atual do buffer de recepção UART. </p>
+<ul>
+<li>Indica o número de bytes atualmente armazenados no buffer de recepção UART. </li>
+</ul>
+
+</div>
+</div>
+<a id="ae8ecfc303888ce93c420f8052dfca1ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ecfc303888ce93c420f8052dfca1ce">&#9670;&nbsp;</a></span>txBufLen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char txBufLen = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comprimento atual do buffer de transmissão UART. </p>
+<ul>
+<li>Indica o número de bytes atualmente armazenados no buffer de transmissão UART. </li>
+</ul>
+
+</div>
+</div>
+<a id="ae6c75dafeeb8601334ce3cbe089987dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c75dafeeb8601334ce3cbe089987dd">&#9670;&nbsp;</a></span>UARTRxBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char UARTRxBuffer[UART_RX_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buffer de recepção UART. </p>
+<ul>
+<li>Este buffer é usado para armazenar os dados recebidos pela UART. </li>
+</ul>
+
+</div>
+</div>
+<a id="a7801926b7e176ac7223f324794874a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7801926b7e176ac7223f324794874a2b">&#9670;&nbsp;</a></span>UARTTxBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char UARTTxBuffer[UART_TX_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Buffer de transmissão UART. </p>
+<ul>
+<li>Este buffer é usado para armazenar os dados a serem enviados pela UART. </li>
 </ul>
 
 </div>

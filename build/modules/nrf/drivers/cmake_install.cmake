@@ -39,16 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/moutinho/Desktop/assign3/build/modules/nrf/drivers/hw_cc3xx/cmake_install.cmake")
+  include("/home/moutinho/Desktop/assing3/build/modules/nrf/drivers/hw_cc3xx/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/moutinho/Desktop/assign3/build/modules/nrf/drivers/entropy/cmake_install.cmake")
+  include("/home/moutinho/Desktop/assing3/build/modules/nrf/drivers/entropy/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/moutinho/Desktop/assign3/build/modules/nrf/drivers/serial/cmake_install.cmake")
+  include("/home/moutinho/Desktop/assing3/build/modules/nrf/drivers/serial/cmake_install.cmake")
 endif()
 

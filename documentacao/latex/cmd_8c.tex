@@ -20,7 +20,7 @@ void \mbox{\hyperlink{cmd_8c_a517f5b7a13af4da2c1ba3353f14f7f4d}{set\+\_\+max\+\_
 \begin{DoxyCompactList}\small\item\em Define a temperatura máxima do sistema. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{cmd_8c_addc390094fe556d15f951c3a2bdbdbe4}{get\+\_\+current\+\_\+temp}} (void)
 \begin{DoxyCompactList}\small\item\em Lê a temperatura atual do sensor. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{cmd_8c_a073961baba82f2a2de88774870ab977b}{cmd}} (void)
+int \mbox{\hyperlink{cmd_8c_acbda56739b42a3e0d02f7c2f6e34fecb}{cmd}} (const uint8\+\_\+t $\ast$cmd\+\_\+buf, int nchar)
 \begin{DoxyCompactList}\small\item\em Função para processar comandos recebidos pela UART. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{cmd_8c_a2a0e03d8d8ff0f0459f7623ffd6d39b1}{calc\+Checksum}} (unsigned char $\ast$buf, int nbytes)
 \begin{DoxyCompactList}\small\item\em Calcula o checksum de um buffer de bytes. \end{DoxyCompactList}\item 
@@ -36,6 +36,17 @@ void \mbox{\hyperlink{cmd_8c_abd91ad9b5887f4769f45823899583bab}{reset\+Tx\+Buffe
 \begin{DoxyCompactList}\small\item\em Reseta o buffer de transmissão UART. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{cmd_8c_a8beeddde9a644610c72724be856db6dd}{get\+Tx\+Buffer}} (unsigned char $\ast$buf, int $\ast$len)
 \begin{DoxyCompactList}\small\item\em Obtém o conteúdo do buffer de transmissão UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{cmd_8c_ae6c75dafeeb8601334ce3cbe089987dd}{UARTRx\+Buffer}} \mbox{[}UART\+\_\+\+RX\+\_\+\+SIZE\mbox{]}
+\begin{DoxyCompactList}\small\item\em Buffer de recepção UART. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{cmd_8c_a7801926b7e176ac7223f324794874a2b}{UARTTx\+Buffer}} \mbox{[}UART\+\_\+\+TX\+\_\+\+SIZE\mbox{]}
+\begin{DoxyCompactList}\small\item\em Buffer de transmissão UART. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{cmd_8c_a823a4908418667c2d93e1c049a1795d9}{rx\+Buf\+Len}} = 0
+\begin{DoxyCompactList}\small\item\em Comprimento atual do buffer de recepção UART. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{cmd_8c_ae8ecfc303888ce93c420f8052dfca1ce}{tx\+Buf\+Len}} = 0
+\begin{DoxyCompactList}\small\item\em Comprimento atual do buffer de transmissão UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -50,7 +61,7 @@ Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180
 2025/06/01 
 \end{DoxyDate}
 \begin{DoxyRefDesc}{Bug}
-\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]Desconhecidos\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000003}{Bug}}]Desconhecidos\end{DoxyRefDesc}
 
 
 \doxysubsection{Function Documentation}
@@ -76,11 +87,11 @@ Esta função calcula o checksum de um buffer de bytes e verifica se o checksum 
 \begin{DoxyReturn}{Returns}
 int Retorna CMD\+\_\+\+SUCCESS se o checksum estiver correto, ou CMD\+\_\+\+CS\+\_\+\+ERROR se houver um erro no checksum. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{cmd_8c_a073961baba82f2a2de88774870ab977b}\label{cmd_8c_a073961baba82f2a2de88774870ab977b}} 
+\mbox{\Hypertarget{cmd_8c_acbda56739b42a3e0d02f7c2f6e34fecb}\label{cmd_8c_acbda56739b42a3e0d02f7c2f6e34fecb}} 
 \index{cmd.c@{cmd.c}!cmd@{cmd}}
 \index{cmd@{cmd}!cmd.c@{cmd.c}}
 \doxysubsubsection{\texorpdfstring{cmd()}{cmd()}}
-{\footnotesize\ttfamily int cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int cmd (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{cmd\+\_\+buf,  }\item[{int}]{nchar }\end{DoxyParamCaption})}
 
 
 
@@ -217,4 +228,59 @@ Envia um caractere para o buffer de transmissão UART.
 int Retorna 0 se o caractere foi adicionado com sucesso, ou -\/1 se o buffer estiver cheio. 
 \end{DoxyReturn}
 
+\end{DoxyItemize}
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{cmd_8c_a823a4908418667c2d93e1c049a1795d9}\label{cmd_8c_a823a4908418667c2d93e1c049a1795d9}} 
+\index{cmd.c@{cmd.c}!rxBufLen@{rxBufLen}}
+\index{rxBufLen@{rxBufLen}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{rxBufLen}{rxBufLen}}
+{\footnotesize\ttfamily unsigned char rx\+Buf\+Len = 0}
+
+
+
+Comprimento atual do buffer de recepção UART. 
+
+
+\begin{DoxyItemize}
+\item Indica o número de bytes atualmente armazenados no buffer de recepção UART. 
+\end{DoxyItemize}\mbox{\Hypertarget{cmd_8c_ae8ecfc303888ce93c420f8052dfca1ce}\label{cmd_8c_ae8ecfc303888ce93c420f8052dfca1ce}} 
+\index{cmd.c@{cmd.c}!txBufLen@{txBufLen}}
+\index{txBufLen@{txBufLen}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{txBufLen}{txBufLen}}
+{\footnotesize\ttfamily unsigned char tx\+Buf\+Len = 0}
+
+
+
+Comprimento atual do buffer de transmissão UART. 
+
+
+\begin{DoxyItemize}
+\item Indica o número de bytes atualmente armazenados no buffer de transmissão UART. 
+\end{DoxyItemize}\mbox{\Hypertarget{cmd_8c_ae6c75dafeeb8601334ce3cbe089987dd}\label{cmd_8c_ae6c75dafeeb8601334ce3cbe089987dd}} 
+\index{cmd.c@{cmd.c}!UARTRxBuffer@{UARTRxBuffer}}
+\index{UARTRxBuffer@{UARTRxBuffer}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{UARTRxBuffer}{UARTRxBuffer}}
+{\footnotesize\ttfamily unsigned char UARTRx\+Buffer\mbox{[}UART\+\_\+\+RX\+\_\+\+SIZE\mbox{]}}
+
+
+
+Buffer de recepção UART. 
+
+
+\begin{DoxyItemize}
+\item Este buffer é usado para armazenar os dados recebidos pela UART. 
+\end{DoxyItemize}\mbox{\Hypertarget{cmd_8c_a7801926b7e176ac7223f324794874a2b}\label{cmd_8c_a7801926b7e176ac7223f324794874a2b}} 
+\index{cmd.c@{cmd.c}!UARTTxBuffer@{UARTTxBuffer}}
+\index{UARTTxBuffer@{UARTTxBuffer}!cmd.c@{cmd.c}}
+\doxysubsubsection{\texorpdfstring{UARTTxBuffer}{UARTTxBuffer}}
+{\footnotesize\ttfamily unsigned char UARTTx\+Buffer\mbox{[}UART\+\_\+\+TX\+\_\+\+SIZE\mbox{]}}
+
+
+
+Buffer de transmissão UART. 
+
+
+\begin{DoxyItemize}
+\item Este buffer é usado para armazenar os dados a serem enviados pela UART. 
 \end{DoxyItemize}

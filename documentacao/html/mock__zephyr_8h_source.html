@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mini-project SETR: teste/mock_zephyr.h Source File</title>
+<title>Projeto SETR: teste/mock_zephyr.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Mini-project SETR
+   <div id="projectname">Projeto SETR
    </div>
+   <div id="projectbrief">Mini-projeto de SETR, Prototyping a thermal process control system</div>
   </td>
  </tr>
  </tbody>
@@ -74,23 +75,20 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define MOCK_ZEPHYR_H</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Substituto da constante do Zephyr</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="mock__zephyr_8h.html#a0bb4b83f0222193b21a8910311bab0ca">   17</a></span>&#160;<span class="preprocessor">#define K_FOREVER 0</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define K_FOREVER 0</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// Estrutura vazia para simular o Zephyr</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structk__mutex.html">   20</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structk__mutex.html">k_mutex</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structk__mutex.html#ad7ae3a2c8f54362f166dd33638d57e20">   21</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structk__mutex.html#ad7ae3a2c8f54362f166dd33638d57e20">dummy</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> dummy;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Funções simuladas do Zephyr</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">int</span> <a class="code" href="mock__zephyr_8h.html#aa6a6c3ba7dcebd800087ee73b82c0dd7">k_mutex_lock</a>(<span class="keyword">struct</span> <a class="code" href="structk__mutex.html">k_mutex</a> *mutex, <span class="keywordtype">int</span> timeout);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">int</span> <a class="code" href="mock__zephyr_8h.html#a360f4c0e7258b0d7030cdb1f452b2c31">k_mutex_unlock</a>(<span class="keyword">struct</span> <a class="code" href="structk__mutex.html">k_mutex</a> *mutex);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">int</span> k_mutex_lock(<span class="keyword">struct</span> <a class="code" href="structk__mutex.html">k_mutex</a> *mutex, <span class="keywordtype">int</span> timeout);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">int</span> k_mutex_unlock(<span class="keyword">struct</span> <a class="code" href="structk__mutex.html">k_mutex</a> *mutex);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="amock__zephyr_8h_html_a360f4c0e7258b0d7030cdb1f452b2c31"><div class="ttname"><a href="mock__zephyr_8h.html#a360f4c0e7258b0d7030cdb1f452b2c31">k_mutex_unlock</a></div><div class="ttdeci">int k_mutex_unlock(struct k_mutex *mutex)</div><div class="ttdef"><b>Definition:</b> mock_zephyr.c:23</div></div>
-<div class="ttc" id="amock__zephyr_8h_html_aa6a6c3ba7dcebd800087ee73b82c0dd7"><div class="ttname"><a href="mock__zephyr_8h.html#aa6a6c3ba7dcebd800087ee73b82c0dd7">k_mutex_lock</a></div><div class="ttdeci">int k_mutex_lock(struct k_mutex *mutex, int timeout)</div><div class="ttdef"><b>Definition:</b> mock_zephyr.c:17</div></div>
 <div class="ttc" id="astructk__mutex_html"><div class="ttname"><a href="structk__mutex.html">k_mutex</a></div><div class="ttdef"><b>Definition:</b> mock_zephyr.h:20</div></div>
-<div class="ttc" id="astructk__mutex_html_ad7ae3a2c8f54362f166dd33638d57e20"><div class="ttname"><a href="structk__mutex.html#ad7ae3a2c8f54362f166dd33638d57e20">k_mutex::dummy</a></div><div class="ttdeci">int dummy</div><div class="ttdef"><b>Definition:</b> mock_zephyr.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

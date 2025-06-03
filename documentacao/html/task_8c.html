@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mini-project SETR: src/task.c File Reference</title>
+<title>Projeto SETR: src/task.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Mini-project SETR
+   <div id="projectname">Projeto SETR
    </div>
+   <div id="projectbrief">Mini-projeto de SETR, Prototyping a thermal process control system</div>
   </td>
  </tr>
  </tbody>
@@ -66,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">task.c File Reference</div>  </div>
@@ -82,6 +84,12 @@ Include dependency graph for task.c:</div>
 <div class="center"><img src="task_8c__incl.png" border="0" usemap="#asrc_2task_8c" alt=""/></div>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aba0045cdfacb8c2b6957e553fdb8c450"><td class="memItemLeft" align="right" valign="top"><a id="aba0045cdfacb8c2b6957e553fdb8c450"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init_rtdb</b> (void)</td></tr>
+<tr class="separator:aba0045cdfacb8c2b6957e553fdb8c450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a5047ee7b772d7f5f69a1cd0ef2f83f32"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRTDB.html">RTDB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="task_8c.html#a5047ee7b772d7f5f69a1cd0ef2f83f32">db</a></td></tr>
@@ -91,7 +99,7 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Funções usadas nas tasks do sistema SETR Mini-Projeto. </p>
-<p>O ficheiro <a class="el" href="task_8c.html" title="Funções usadas nas tasks do sistema SETR Mini-Projeto.">task.c</a> contem a implementação das funções que foram declaradas no ficheiro <a class="el" href="task_8h.html" title="Definição da RTDB (Real-Time DataBase) e funções utilitárias para tasks.">task.h</a></p>
+<p>O ficheiro <a class="el" href="task_8c.html" title="Funções usadas nas tasks do sistema SETR Mini-Projeto.">task.c</a> contem a implementação das estruturas que foram declaradas no ficheiro <a class="el" href="task_8h.html" title="Definição da RTDB (Real-Time DataBase) e funções utilitárias para tasks.">task.h</a></p>
 <dl class="section author"><dt>Author</dt><dd>Nuno Moutinho - 98626 e João Ferreira - 98180 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025/05/29 </dd></dl>
 </div><h2 class="groupheader">Variable Documentation</h2>
@@ -106,11 +114,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .system_on = 0,</div>
-<div class="line">    .max_temp = 30,      </div>
-<div class="line">}</div>
-</div><!-- fragment --><p>Variável global da <a class="el" href="structRTDB.html" title="Estrutura da base de dados partilhada entre tasks (RTDB).">RTDB</a> partilhada entre as tasks </p>
+<p>Variável global da <a class="el" href="structRTDB.html" title="Estrutura da base de dados partilhada entre tasks (RTDB).">RTDB</a> partilhada entre as tasks </p>
 
 </div>
 </div>

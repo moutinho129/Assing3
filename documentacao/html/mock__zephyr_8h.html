@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mini-project SETR: teste/mock_zephyr.h File Reference</title>
+<title>Projeto SETR: teste/mock_zephyr.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Mini-project SETR
+   <div id="projectname">Projeto SETR
    </div>
+   <div id="projectbrief">Mini-projeto de SETR, Prototyping a thermal process control system</div>
   </td>
  </tr>
  </tbody>
@@ -91,14 +92,17 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a0bb4b83f0222193b21a8910311bab0ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mock__zephyr_8h.html#a0bb4b83f0222193b21a8910311bab0ca">K_FOREVER</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:a0bb4b83f0222193b21a8910311bab0ca"><td class="memItemLeft" align="right" valign="top"><a id="a0bb4b83f0222193b21a8910311bab0ca"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>K_FOREVER</b>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a0bb4b83f0222193b21a8910311bab0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa6a6c3ba7dcebd800087ee73b82c0dd7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mock__zephyr_8h.html#aa6a6c3ba7dcebd800087ee73b82c0dd7">k_mutex_lock</a> (struct <a class="el" href="structk__mutex.html">k_mutex</a> *mutex, int timeout)</td></tr>
+<tr class="memitem:aa6a6c3ba7dcebd800087ee73b82c0dd7"><td class="memItemLeft" align="right" valign="top"><a id="aa6a6c3ba7dcebd800087ee73b82c0dd7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>k_mutex_lock</b> (struct <a class="el" href="structk__mutex.html">k_mutex</a> *mutex, int timeout)</td></tr>
 <tr class="separator:aa6a6c3ba7dcebd800087ee73b82c0dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a360f4c0e7258b0d7030cdb1f452b2c31"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mock__zephyr_8h.html#a360f4c0e7258b0d7030cdb1f452b2c31">k_mutex_unlock</a> (struct <a class="el" href="structk__mutex.html">k_mutex</a> *mutex)</td></tr>
+<tr class="memitem:a360f4c0e7258b0d7030cdb1f452b2c31"><td class="memItemLeft" align="right" valign="top"><a id="a360f4c0e7258b0d7030cdb1f452b2c31"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>k_mutex_unlock</b> (struct <a class="el" href="structk__mutex.html">k_mutex</a> *mutex)</td></tr>
 <tr class="separator:a360f4c0e7258b0d7030cdb1f452b2c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -110,72 +114,10 @@ Functions</h2></td></tr>
 </li>
 <li><dl class="section date"><dt>Date</dt><dd>2025/06/01</dd></dl>
 </li>
-<li><dl class="bug"><dt><b><a class="el" href="bug.html#_bug000008">Bug:</a></b></dt><dd>Desconhecidos</dd></dl>
+<li><dl class="bug"><dt><b><a class="el" href="bug.html#_bug000011">Bug:</a></b></dt><dd>Desconhecidos</dd></dl>
 </li>
 </ul>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a0bb4b83f0222193b21a8910311bab0ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bb4b83f0222193b21a8910311bab0ca">&#9670;&nbsp;</a></span>K_FOREVER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define K_FOREVER&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="aa6a6c3ba7dcebd800087ee73b82c0dd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6a6c3ba7dcebd800087ee73b82c0dd7">&#9670;&nbsp;</a></span>k_mutex_lock()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int k_mutex_lock </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structk__mutex.html">k_mutex</a> *&#160;</td>
-          <td class="paramname"><em>mutex</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>timeout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a360f4c0e7258b0d7030cdb1f452b2c31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a360f4c0e7258b0d7030cdb1f452b2c31">&#9670;&nbsp;</a></span>k_mutex_unlock()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int k_mutex_unlock </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structk__mutex.html">k_mutex</a> *&#160;</td>
-          <td class="paramname"><em>mutex</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

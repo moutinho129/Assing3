@@ -5,7 +5,7 @@ digraph "teste/unitycmd.c"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="teste/unitycmd.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Testes unitários para o módulo de comandos do sistema SETR Mini-Projeto."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
-  Node2 [label="unity.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 [label="../unity/unity.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
   Node3 [label="mock_cmd.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mock__cmd_8h.html",tooltip="Ficheiro de cabeçalho para teste dos comandos do sistema SETR Mini-Projeto."];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];

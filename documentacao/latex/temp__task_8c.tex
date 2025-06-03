@@ -1,0 +1,58 @@
+\hypertarget{temp__task_8c}{}\doxysection{src/temp\+\_\+task.c File Reference}
+\label{temp__task_8c}\index{src/temp\_task.c@{src/temp\_task.c}}
+{\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/device.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/devicetree.\+h$>$}\newline
+{\ttfamily \#include $<$zephyr/drivers/i2c.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/task.\+h\char`\"{}}\newline
+Include dependency graph for temp\+\_\+task.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{temp__task_8c_a7d19703980564150c36c41945853212d}\label{temp__task_8c_a7d19703980564150c36c41945853212d}} 
+\#define {\bfseries TC74\+\_\+\+NODE}~DT\+\_\+\+NODELABEL(tc74sensor)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{temp__task_8c_a2d0bfca3786444f0de03b1470d12387d}\label{temp__task_8c_a2d0bfca3786444f0de03b1470d12387d}} 
+void {\bfseries temp\+\_\+task} (void $\ast$a, void $\ast$b, void $\ast$c)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRTDB}{RTDB}} \mbox{\hyperlink{temp__task_8c_a5047ee7b772d7f5f69a1cd0ef2f83f32}{db}}
+\item 
+struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} \mbox{\hyperlink{temp__task_8c_a6d2bc6e8daf73029e362c7456a9b5e7d}{db\+\_\+lock}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tarefa responsável por ler a temperatura do sensor TC74 via I2C e atualizar a \mbox{\hyperlink{structRTDB}{RTDB}}. A tarefa lê a temperatura a cada segundo, atualizando a \mbox{\hyperlink{structRTDB}{RTDB}} de forma segura com mutex.
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/06/03 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000004}{Bug}}]Nenhum conhecido \end{DoxyRefDesc}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{temp__task_8c_a5047ee7b772d7f5f69a1cd0ef2f83f32}\label{temp__task_8c_a5047ee7b772d7f5f69a1cd0ef2f83f32}} 
+\index{temp\_task.c@{temp\_task.c}!db@{db}}
+\index{db@{db}!temp\_task.c@{temp\_task.c}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structRTDB}{RTDB}} db\hspace{0.3cm}{\ttfamily [extern]}}
+
+Variável global da \mbox{\hyperlink{structRTDB}{RTDB}} partilhada entre as tasks \mbox{\Hypertarget{temp__task_8c_a6d2bc6e8daf73029e362c7456a9b5e7d}\label{temp__task_8c_a6d2bc6e8daf73029e362c7456a9b5e7d}} 
+\index{temp\_task.c@{temp\_task.c}!db\_lock@{db\_lock}}
+\index{db\_lock@{db\_lock}!temp\_task.c@{temp\_task.c}}
+\doxysubsubsection{\texorpdfstring{db\_lock}{db\_lock}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structk__mutex}{k\+\_\+mutex}} db\+\_\+lock\hspace{0.3cm}{\ttfamily [extern]}}
+
+Mutex global para acesso concorrente à \mbox{\hyperlink{structRTDB}{RTDB}} 

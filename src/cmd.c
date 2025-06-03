@@ -21,6 +21,13 @@
 #include "../include/cmd.h"
 #include "../include/task.h"
 
+// Definições reais dos buffers e contadores
+unsigned char UARTRxBuffer[UART_RX_SIZE];
+unsigned char UARTTxBuffer[UART_TX_SIZE];
+unsigned char rxBufLen = 0;
+unsigned char txBufLen = 0;
+
+
 
 /**
  * @brief Define a temperatura máxima do sistema.
@@ -46,15 +53,38 @@ void set_max_temp(int t) {
 int get_current_temp(void) {
     int val;
     k_mutex_lock(&db_lock, K_FOREVER);
-    val = db.adc_val;  // ou outro campo para temperatura atual!
+    val = db.i2c_val;  // ou outro campo para temperatura atual!
     k_mutex_unlock(&db_lock);
     return val;
 }
 
-int cmd(void){
 
-    int i = 0;
-    char tempStr[4]; 
+ //int cmd(void){
+int cmd(const uint8_t *cmd_buf, int nchar) { 
+
+	resetRxBuffer();
+	resetTxBuffer();
+
+	memcpy(UARTRxBuffer, cmd_buf, nchar);
+    rxBufLen = nchar;
+
+	// Verifica se o comando é muito longo
+	if (nchar > UART_RX_SIZE) {
+		resetTxBuffer();
+		txChar('#'); txChar('E'); txChar('l');
+		int cs = ('E' + 'l') % 256;
+		txChar((cs / 100) % 10 + '0');
+		txChar((cs / 10) % 10 + '0');
+		txChar((cs % 10) + '0');
+		txChar('!');
+		txBufLen = 7;
+		resetRxBuffer();
+		
+		return CMD_WRONG_FORMAT;
+	}
+
+	int i = 0;
+    char tempStr[3]; 
     int cs; 
 
     // deteta se o buffer está vazio
@@ -69,13 +99,12 @@ int cmd(void){
         txChar('!');
         txBufLen = 7;
         resetRxBuffer();		
-		
+
 		return CMD_EMPTY_STRING; 
 	};
-
+	
 	// deteta erros de framing
 	if (UARTRxBuffer[0] != START || UARTRxBuffer[rxBufLen - 1] != END) {
-		
 		resetTxBuffer();
         txChar('#'); txChar('E'); txChar('f');
         cs = ('E' + 'f') % 256;
@@ -91,14 +120,15 @@ int cmd(void){
 
 	/* Find index of SOF */
 	for(i=0; i < rxBufLen; i++) {
-		if(UARTRxBuffer[i] =START) {
+		if(UARTRxBuffer[i] ==START) {
 			break;
 		}
 	}
 
     if(i < rxBufLen) {
 		
-	switch(UARTRxBuffer[i+1]) { 
+
+	switch(UARTRxBuffer[1]) { 
 
 		//---------------------------------------------------
         // --------------------- caso 'M' -------------------
@@ -119,10 +149,10 @@ int cmd(void){
 						return CMD_CS_ERROR;
 					}
 
+
 				tempStr[0] = UARTRxBuffer[i+2];
 				tempStr[1] = UARTRxBuffer[i+3];
-				tempStr[2] = UARTRxBuffer[i+4];
-				tempStr[3] = '\0';
+				tempStr[2] = '\0';
 
                 int newMax = atoi(tempStr);
                 set_max_temp(newMax);
@@ -136,90 +166,98 @@ int cmd(void){
                 txChar((cs / 10) % 10 + '0');
                 txChar((cs % 10) + '0');
                 txChar('!');
-                txBufLen = 7;
                 resetRxBuffer();
+
+				printk("Temperatura máxima definida: %d\n", newMax);
+
+
                 return CMD_SUCCESS;
             
         break;
         
 
+
+
+
         // ---------------------------------------------------
         // --------------------- caso 'C' --------------------
 		// --------------------------------------------------
         case 'C': 
+
+		resetTxBuffer();
+		// Verifica se o checksum está correto
 			
-			// Verifica se o checksum está correto
-			if(calcChecksum(&(UARTRxBuffer[i+1]), 1) != CMD_SUCCESS){
-				resetTxBuffer();
-                txChar('#'); txChar('E'); txChar('s');
-                int cs = ('E' + 's') % 256;
-                txChar((cs / 100) % 10 + '0');
-                txChar((cs / 10) % 10 + '0');
-                txChar((cs % 10) + '0');
-                txChar('!');
-                txBufLen = 7;
-                resetRxBuffer();
-                return CMD_CS_ERROR;
+		if(calcChecksum(&(UARTRxBuffer[i+1]), 1) != CMD_SUCCESS){
+			
+            txChar('#'); txChar('E'); txChar('s');
+        	int cs = ('E' + 's') % 256;
+            txChar((cs / 100) % 10 + '0');
+            txChar((cs / 10) % 10 + '0');
+            txChar((cs % 10) + '0');
+            txChar('!');
+            txBufLen = 7;
+            resetRxBuffer();
+        return CMD_CS_ERROR;
             }
 
-			// resposta
-			resetTxBuffer();
-			txChar('#');
-			txChar('C');
-			
-			intToAscii(get_current_temp(), tempStr);
-			txChar(tempStr[0]);
-			txChar(tempStr[1]);
-			txChar(tempStr[2]);
-			
-			//checksum
-			cs = ('c' + tempStr[0] + tempStr[1] + tempStr[2]) % 256;
-			txChar((cs / 100) % 10 + '0');
-			txChar((cs / 10) % 10 + '0');
-			txChar((cs % 10) + '0');
-			txChar('!');
-			txBufLen = 9;
-			resetRxBuffer();
-			return CMD_SUCCESS;
-
-		break;
+	
+		// Envia sempre a resposta da temperatura SEM verificar checksum nem nada
+		
+		txChar('#');
+		txChar('C');
+		intToAscii(get_current_temp(), tempStr);
+		txChar(tempStr[0]);
+		txChar(tempStr[1]);
+		txChar(tempStr[2]);
+		txChar('!');
+		
+		//checksum
+		cs = ('#' + 'C' + tempStr[0] + tempStr[1] + tempStr[2]) % 256;
+		txChar((cs / 100) % 10 + '0');
+		txChar((cs / 10) % 10 + '0');
+		txChar((cs % 10) + '0');
+		txChar('!');
+		
+		printk("Temperatura atual: %s\n", tempStr);
+		resetRxBuffer();
+		return CMD_SUCCESS;
+	break;
         
         
-		// --------------------------------------------------
-		// ------------------ caso 'S'	---------------------
-		// -------------------------------------------------- 
-        case 'S':
-		if (rxBufLen >= 15 && calcChecksum(&(UARTRxBuffer[i+1]), 10) == CMD_SUCCESS) {
-        	// Extrair Kp, Ti, Td
-        	char kpStr[4] = { UARTRxBuffer[i+2], UARTRxBuffer[i+3], UARTRxBuffer[i+4], '\0' };
-        	char tiStr[4] = { UARTRxBuffer[i+5], UARTRxBuffer[i+6], UARTRxBuffer[i+7], '\0' };
-        	char tdStr[4] = { UARTRxBuffer[i+8], UARTRxBuffer[i+9], UARTRxBuffer[i+10], '\0' };
+	// --------------------------------------------------
+	// ------------------ caso 'S'	---------------------
+	// -------------------------------------------------- 
+    case 'S':
+	if (rxBufLen >= 7 && calcChecksum(&(UARTRxBuffer[i+1]), 4) == CMD_SUCCESS) {
+		// Extrair valor da histerese
+		char hystStr[4] = {
+			UARTRxBuffer[i+2],
+			UARTRxBuffer[i+3],
+			UARTRxBuffer[i+4],
+			'\0'
+		};
+		int hystVal = atoi(hystStr);
 
-			// converte os valores de string para inteiro
-        	int kp = atoi(kpStr);
-        	int ti = atoi(tiStr);
-        	int td = atoi(tdStr);
+		// Atualizar na base de dados
+		k_mutex_lock(&db_lock, K_FOREVER);
+		db.hysteresis = hystVal;
+		k_mutex_unlock(&db_lock);
 
-        	k_mutex_lock(&db_lock, K_FOREVER);
-        	db.Kp = kp;
-        	db.Ti = ti;
-        	db.Td = td;
-        	k_mutex_unlock(&db_lock);
+		// Resposta de sucesso
+		resetTxBuffer();
+		txChar('#'); txChar('E'); txChar('o');
+		// checksum
+		cs = ('E' + 'o') % 256;
+		txChar((cs / 100) % 10 + '0');
+		txChar((cs / 10) % 10 + '0');
+		txChar((cs % 10) + '0');
+		txChar('!');
+		resetRxBuffer();
 
-        	// Resposta de sucesso
-        	resetTxBuffer();
-        	txChar('#'); txChar('E'); txChar('o');
-			//checksum
-        	cs = ('E' + 'o') % 256;
-        	txChar((cs / 100) % 10 + '0');
-        	txChar((cs / 10) % 10 + '0');
-        	txChar((cs % 10) + '0');
-        	txChar('!');
-        	txBufLen = 7;
-        	resetRxBuffer();
-        	return CMD_SUCCESS;
-    	}
-        break;
+		printk("Histerese definida: %d\n", hystVal);
+		return CMD_SUCCESS;
+	}
+	break;
 		
 		default:
                 resetTxBuffer();

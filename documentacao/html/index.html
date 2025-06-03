@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mini-project SETR: Main Page</title>
+<title>Projeto SETR: Mini-Projeto SETR 2024/25</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Mini-project SETR
+   <div id="projectname">Projeto SETR
    </div>
+   <div id="projectbrief">Mini-projeto de SETR, Prototyping a thermal process control system</div>
   </td>
  </tr>
  </tbody>
@@ -60,11 +61,61 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Mini-project SETR Documentation</div>  </div>
+<div class="title">Mini-Projeto SETR 2024/25 </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_mainpage"></a> <b>Protótipo de um Sistema de Controlo Térmico</b></p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md2"></a>
+Objetivo</h1>
+<p>Desenvolver um protótipo de controlo térmico baseado em nRF52840-DK e Zephyr, com atuação por resistor de potência e leitura de temperatura via sensor digital I2C.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md4"></a>
+Funcionalidades</h1>
+<ul>
+<li><b>Interface de Operação:</b> <br  />
+<ul>
+<li>Botões para ligar/desligar o sistema e ajustar a temperatura.</li>
+<li>LEDs para indicação do estado do sistema (ligado, temperatura normal, abaixo/acima do target).</li>
+</ul>
+</li>
+<li><b>Interface de Configuração (UART):</b> <br  />
+<ul>
+<li>Permite definir parâmetros do sistema, limites de temperatura e obter medições em tempo real.</li>
+<li>Protocolo de comandos robusto, com verificação por checksum e respostas ASCII.</li>
+</ul>
+</li>
+<li><b>Controlador:</b> <br  />
+<ul>
+<li>On/Off ou PID, com parâmetros configuráveis via UART.</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md6"></a>
+Estrutura do Projeto</h1>
+<ul>
+<li><code>src/</code> – Código fonte principal (tarefas, controlador, etc)</li>
+<li><code>include/</code> – Headers e interfaces</li>
+<li><code>teste/</code> – Testes unitários e mocks</li>
+<li><code>documentacao/</code> – Documentação Doxygen (auto-gerada)</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md8"></a>
+Autores</h1>
+<ul>
+<li><b>Nuno Moutinho</b> – 98626 <br  />
+</li>
+<li><b>João Ferreira</b> - 98180</li>
+</ul>
+<hr  />
+<blockquote class="doxtable">
+<p>Projeto realizado para a unidade curricular <b>Sistemas Embebidos e de Tempo-Real (SETR)</b> <br  />
+ Departamento de Eletrónica, Telecomunicações e Informática – Universidade de Aveiro </p>
+</blockquote>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

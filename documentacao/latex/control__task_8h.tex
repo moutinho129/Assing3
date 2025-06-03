@@ -1,0 +1,57 @@
+\hypertarget{control__task_8h}{}\doxysection{include/control\+\_\+task.h File Reference}
+\label{control__task_8h}\index{include/control\_task.h@{include/control\_task.h}}
+
+
+Ficheiro de cabeçalho para a tarefa de controlo térmico.  
+
+
+{\ttfamily \#include $<$zephyr/kernel.\+h$>$}\newline
+Include dependency graph for control\+\_\+task.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{control__task_8h_a2d4608c6aa03f08b1ebfa53d641bf0e8}{control\+\_\+task}} (void)
+\begin{DoxyCompactList}\small\item\em Tarefa de controlo térmico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ficheiro de cabeçalho para a tarefa de controlo térmico. 
+
+
+\begin{DoxyItemize}
+\item Define a função de controlo que compara a temperatura atual com o setpoint e ativa ou desativa o aquecedor (resistor de potência) consoante a lógica de controlo definida.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Nuno Moutinho -\/ 98626 e João Ferreira -\/ 98180 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025/06/03 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{control__task_8h_a2d4608c6aa03f08b1ebfa53d641bf0e8}\label{control__task_8h_a2d4608c6aa03f08b1ebfa53d641bf0e8}} 
+\index{control\_task.h@{control\_task.h}!control\_task@{control\_task}}
+\index{control\_task@{control\_task}!control\_task.h@{control\_task.h}}
+\doxysubsubsection{\texorpdfstring{control\_task()}{control\_task()}}
+{\footnotesize\ttfamily void control\+\_\+task (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Tarefa de controlo térmico. 
+
+Compara a temperatura atual com o setpoint e ativa ou desativa o aquecedor (resistor de potência) consoante a lógica de controlo definida (On/\+Off com histerese ou PID).
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Parâmetro genérico (não utilizado) \\
+\hline
+{\em b} & Parâmetro genérico (não utilizado) \\
+\hline
+{\em c} & Parâmetro genérico (não utilizado) \\
+\hline
+\end{DoxyParams}

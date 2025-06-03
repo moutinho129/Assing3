@@ -1,12 +1,12 @@
 linker.cmd: \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/arch/arm/cortex_m/scripts/linker.ld \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/autoconf.h \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/autoconf.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/sections.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/section_tags.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/toolchain.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/toolchain/gcc.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/devicetree.h \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/devicetree_generated.h \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/devicetree_generated.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/irq_multilevel.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/sys/util.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/sys/util_macro.h \
@@ -33,7 +33,7 @@ linker.cmd: \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/devicetree_regions.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/linker-defs.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/toolchain/common.h \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/offsets.h \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/offsets.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/linker-tool.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/linker-tool-gcc.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/kernel/mm.h \
@@ -41,7 +41,7 @@ linker.cmd: \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/kernel/mm/demand_paging.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/linker-devnull.h \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/rel-sections.ld \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/snippets-rom-start.ld \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/snippets-rom-start.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/../arch/common/rom_start_address.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/../arch/common/fill_with_zeros.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/../arch/common/rom_start_offset.ld \
@@ -61,20 +61,20 @@ linker.cmd: \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/common-rom/common-rom-debug.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/common-rom/common-rom-misc.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/thread-local-storage.ld \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/snippets-rodata.ld \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/snippets-rodata.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/../arch/arm/core/swi_tables.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/kobject-rom.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/cplusplus-rom.ld \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/snippets-ram-sections.ld \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/snippets-ram-sections.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/../arch/common/ramfunc.ld \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/snippets-ramfunc-section.ld \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/snippets-rwdata.ld \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/snippets-ramfunc-section.ld \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/snippets-rwdata.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/common-ram.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/kobject-data.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/cplusplus-ram.ld \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/snippets-data-sections.ld \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/snippets-noinit.ld \
- /home/moutinho/Desktop/assign3/build/zephyr/include/generated/snippets-sections.ld \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/snippets-data-sections.ld \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/snippets-noinit.ld \
+ /home/moutinho/Desktop/assing3/build/zephyr/include/generated/snippets-sections.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/intlist.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/ram-end.ld \
  /home/moutinho/ncs/v2.6.0/zephyr/include/zephyr/linker/debug-sections.ld

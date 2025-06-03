@@ -53,13 +53,19 @@ void led_task(void *a, void *b, void *c) {
         gpio_pin_set_dt(&leds[i], 0); // Começa tudo apagado!
     }
 
+    // Variáveis para evitar atualizações desnecessárias
+    static int last_system_on = -1;
+    static int last_target = -9999;
+    static int last_temp = -9999;
+    static int last_diff = -9999;
+
     while (1) {
     int diff = 0;
     int system_on, target, temp;
     k_mutex_lock(&db_lock, K_FOREVER);
     system_on = db.system_on;
     target = db.target_temp;
-    temp = db.adc_val;
+    temp = db.i2c_val;
     k_mutex_unlock(&db_lock);
 
     gpio_pin_set_dt(&leds[0], system_on);
@@ -84,7 +90,17 @@ void led_task(void *a, void *b, void *c) {
         }
     }
     k_msleep(200);
-    printf("system_on=%d, target=%d, temp=%d, diff=%d\n", system_on, target, temp, diff);
+    if (system_on != last_system_on ||
+    target != last_target ||
+    temp != last_temp ||
+    diff != last_diff)
+    {
+        printf("system_on=%d, target=%d, temp=%d, diff=%d\n", system_on, target, temp, diff);
+        last_system_on = system_on;
+        last_target = target;
+        last_temp = temp;
+        last_diff = diff;
+    }
 }
 
 }

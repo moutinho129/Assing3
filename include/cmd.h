@@ -16,9 +16,9 @@
 #ifndef CMD_PROC_H_
 #define CMD_PROC_H_
 
-#define UART_RX_SIZE 20 	/* Maximum size of the RX buffer */ 
-#define UART_TX_SIZE 20 	/* Maximum size of the TX buffer */ 
-#define BUFFER_SIZE 20 	/* Maximum size of the history buffers */
+#define UART_RX_SIZE 50 	/* Maximum size of the RX buffer */ 
+#define UART_TX_SIZE 50 	/* Maximum size of the TX buffer */ 
+#define BUFFER_SIZE 50 	/* Maximum size of the history buffers */
 #define START '#'	        /* Start of Frame Symbol */
 #define END '!'          /* End of Frame Symbol */
 
@@ -63,7 +63,8 @@ extern unsigned char txBufLen;
  * * Esta função analisa os comandos recebidos no buffer de recepção UART e executa as ações correspondentes.
  * 
  */
-int cmd(void);
+//int cmd(void);
+int cmd(const uint8_t *cmd_buf, int nchar);
 
 /**
  * @brief Envia um caractere para o buffer de recepção UART.

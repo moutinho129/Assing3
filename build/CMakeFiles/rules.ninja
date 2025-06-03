@@ -385,6 +385,25 @@ rule C_STATIC_LIBRARY_LINKER__drivers__gpio_
 #############################################
 # Rule for compiling C files.
 
+rule C_COMPILER__drivers__i2c_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__i2c_
+  command = $PRE_LINK && ccache /home/moutinho/ncs/toolchains/2be090971e/usr/local/bin/cmake -E rm -f $TARGET_FILE && ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
 rule C_COMPILER__drivers__pinctrl_
   depfile = $DEP_FILE
   deps = gcc
@@ -396,6 +415,25 @@ rule C_COMPILER__drivers__pinctrl_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__drivers__pinctrl_
+  command = $PRE_LINK && ccache /home/moutinho/ncs/toolchains/2be090971e/usr/local/bin/cmake -E rm -f $TARGET_FILE && ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER__drivers__pwm_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__drivers__pwm_
   command = $PRE_LINK && ccache /home/moutinho/ncs/toolchains/2be090971e/usr/local/bin/cmake -E rm -f $TARGET_FILE && ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
@@ -499,25 +537,6 @@ rule C_STATIC_LIBRARY_LINKER__modules__hal_nordic__nrfx_
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__modules__segger_
-  depfile = $DEP_FILE
-  deps = gcc
-  command = ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building C object $out
-
-
-#############################################
-# Rule for linking C static library.
-
-rule C_STATIC_LIBRARY_LINKER__modules__segger_
-  command = $PRE_LINK && ccache /home/moutinho/ncs/toolchains/2be090971e/usr/local/bin/cmake -E rm -f $TARGET_FILE && ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
-  description = Linking C static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling C files.
-
 rule C_COMPILER__kernel_
   depfile = $DEP_FILE
   deps = gcc
@@ -538,7 +557,7 @@ rule C_STATIC_LIBRARY_LINKER__kernel_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/moutinho/ncs/toolchains/2be090971e/usr/local/bin/cmake --regenerate-during-build -S/home/moutinho/Desktop/assign3 -B/home/moutinho/Desktop/assign3/build
+  command = /home/moutinho/ncs/toolchains/2be090971e/usr/local/bin/cmake --regenerate-during-build -S/home/moutinho/Desktop/assing3 -B/home/moutinho/Desktop/assing3/build
   description = Re-running CMake...
   generator = 1
 

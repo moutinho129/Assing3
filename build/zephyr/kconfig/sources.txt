@@ -1,7 +1,7 @@
-/home/moutinho/Desktop/assign3/build/Kconfig/Kconfig.dts
-/home/moutinho/Desktop/assign3/build/Kconfig/Kconfig.modules
-/home/moutinho/Desktop/assign3/build/Kconfig/Kconfig.shield
-/home/moutinho/Desktop/assign3/build/Kconfig/Kconfig.shield.defconfig
+/home/moutinho/Desktop/assing3/build/Kconfig/Kconfig.dts
+/home/moutinho/Desktop/assing3/build/Kconfig/Kconfig.modules
+/home/moutinho/Desktop/assing3/build/Kconfig/Kconfig.shield
+/home/moutinho/Desktop/assing3/build/Kconfig/Kconfig.shield.defconfig
 /home/moutinho/ncs/toolchains/2be090971e/opt/zephyr-sdk/cmake/zephyr/Kconfig
 /home/moutinho/ncs/v2.6.0/modules/hal/cirrus-logic/Kconfig
 /home/moutinho/ncs/v2.6.0/modules/lib/chre/platform/zephyr/Kconfig

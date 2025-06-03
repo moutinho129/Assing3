@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mini-project SETR: include/cmd.h File Reference</title>
+<title>Projeto SETR: include/cmd.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Mini-project SETR
+   <div id="projectname">Projeto SETR
    </div>
+   <div id="projectbrief">Mini-projeto de SETR, Prototyping a thermal process control system</div>
   </td>
  </tr>
  </tbody>
@@ -86,34 +87,45 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a7e4912ef6d5612f8ebca463ff206d9ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a7e4912ef6d5612f8ebca463ff206d9ce">UART_RX_SIZE</a>&#160;&#160;&#160;20 	/* Maximum size of the RX buffer */</td></tr>
+<tr class="memitem:a7e4912ef6d5612f8ebca463ff206d9ce"><td class="memItemLeft" align="right" valign="top"><a id="a7e4912ef6d5612f8ebca463ff206d9ce"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UART_RX_SIZE</b>&#160;&#160;&#160;50 	/* Maximum size of the RX buffer */</td></tr>
 <tr class="separator:a7e4912ef6d5612f8ebca463ff206d9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bd31e3844f5461db2cbe6d906ca4040"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a7bd31e3844f5461db2cbe6d906ca4040">UART_TX_SIZE</a>&#160;&#160;&#160;20 	/* Maximum size of the TX buffer */</td></tr>
+<tr class="memitem:a7bd31e3844f5461db2cbe6d906ca4040"><td class="memItemLeft" align="right" valign="top"><a id="a7bd31e3844f5461db2cbe6d906ca4040"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UART_TX_SIZE</b>&#160;&#160;&#160;50 	/* Maximum size of the TX buffer */</td></tr>
 <tr class="separator:a7bd31e3844f5461db2cbe6d906ca4040"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b20d41d6252e9871430c242cb1a56e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>&#160;&#160;&#160;20 	/* Maximum size of the history buffers */</td></tr>
+<tr class="memitem:a6b20d41d6252e9871430c242cb1a56e7"><td class="memItemLeft" align="right" valign="top"><a id="a6b20d41d6252e9871430c242cb1a56e7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUFFER_SIZE</b>&#160;&#160;&#160;50 	/* Maximum size of the history buffers */</td></tr>
 <tr class="separator:a6b20d41d6252e9871430c242cb1a56e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3018c7600b7bb9866400596a56a57af7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a3018c7600b7bb9866400596a56a57af7">START</a>&#160;&#160;&#160;'#'	        /* Start of Frame Symbol */</td></tr>
+<tr class="memitem:a3018c7600b7bb9866400596a56a57af7"><td class="memItemLeft" align="right" valign="top"><a id="a3018c7600b7bb9866400596a56a57af7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>START</b>&#160;&#160;&#160;'#'	        /* Start of Frame Symbol */</td></tr>
 <tr class="separator:a3018c7600b7bb9866400596a56a57af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f">END</a>&#160;&#160;&#160;'!'          /* End of Frame Symbol */</td></tr>
+<tr class="memitem:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memItemLeft" align="right" valign="top"><a id="a29fd18bed01c4d836c7ebfe73a125c3f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>END</b>&#160;&#160;&#160;'!'          /* End of Frame Symbol */</td></tr>
 <tr class="separator:a29fd18bed01c4d836c7ebfe73a125c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2008c1bc36d9ef42571a6ec52516d02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#aa2008c1bc36d9ef42571a6ec52516d02">CMD_SUCCESS</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:aa2008c1bc36d9ef42571a6ec52516d02"><td class="memItemLeft" align="right" valign="top"><a id="aa2008c1bc36d9ef42571a6ec52516d02"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_SUCCESS</b>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:aa2008c1bc36d9ef42571a6ec52516d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58d9edeb01fa855cfc869904d55a3cb9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a58d9edeb01fa855cfc869904d55a3cb9">CMD_EMPTY_STRING</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memitem:a58d9edeb01fa855cfc869904d55a3cb9"><td class="memItemLeft" align="right" valign="top"><a id="a58d9edeb01fa855cfc869904d55a3cb9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_EMPTY_STRING</b>&#160;&#160;&#160;-1</td></tr>
 <tr class="separator:a58d9edeb01fa855cfc869904d55a3cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a257cfa90b83ea92f857763aecd409836"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a257cfa90b83ea92f857763aecd409836">CMD_INVALID</a>&#160;&#160;&#160;-2</td></tr>
+<tr class="memitem:a257cfa90b83ea92f857763aecd409836"><td class="memItemLeft" align="right" valign="top"><a id="a257cfa90b83ea92f857763aecd409836"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_INVALID</b>&#160;&#160;&#160;-2</td></tr>
 <tr class="separator:a257cfa90b83ea92f857763aecd409836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c05fea069d1051d1e81073d0aaa84c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a7c05fea069d1051d1e81073d0aaa84c5">CMD_CS_ERROR</a>&#160;&#160;&#160;-3</td></tr>
+<tr class="memitem:a7c05fea069d1051d1e81073d0aaa84c5"><td class="memItemLeft" align="right" valign="top"><a id="a7c05fea069d1051d1e81073d0aaa84c5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_CS_ERROR</b>&#160;&#160;&#160;-3</td></tr>
 <tr class="separator:a7c05fea069d1051d1e81073d0aaa84c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade39201a8e331bdd96c8377224ef6d1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ade39201a8e331bdd96c8377224ef6d1f">CMD_WRONG_FORMAT</a>&#160;&#160;&#160;-4</td></tr>
+<tr class="memitem:ade39201a8e331bdd96c8377224ef6d1f"><td class="memItemLeft" align="right" valign="top"><a id="ade39201a8e331bdd96c8377224ef6d1f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_WRONG_FORMAT</b>&#160;&#160;&#160;-4</td></tr>
 <tr class="separator:ade39201a8e331bdd96c8377224ef6d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cca5ff2d7daf092a74962a305d8c5c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a7cca5ff2d7daf092a74962a305d8c5c7">CMD_FRAMING_ERROR</a>&#160;&#160;&#160;-5</td></tr>
+<tr class="memitem:a7cca5ff2d7daf092a74962a305d8c5c7"><td class="memItemLeft" align="right" valign="top"><a id="a7cca5ff2d7daf092a74962a305d8c5c7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CMD_FRAMING_ERROR</b>&#160;&#160;&#160;-5</td></tr>
 <tr class="separator:a7cca5ff2d7daf092a74962a305d8c5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a073961baba82f2a2de88774870ab977b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a073961baba82f2a2de88774870ab977b">cmd</a> (void)</td></tr>
-<tr class="memdesc:a073961baba82f2a2de88774870ab977b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para processar comandos recebidos pela UART.  <a href="cmd_8h.html#a073961baba82f2a2de88774870ab977b">More...</a><br /></td></tr>
-<tr class="separator:a073961baba82f2a2de88774870ab977b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbda56739b42a3e0d02f7c2f6e34fecb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#acbda56739b42a3e0d02f7c2f6e34fecb">cmd</a> (const uint8_t *cmd_buf, int nchar)</td></tr>
+<tr class="memdesc:acbda56739b42a3e0d02f7c2f6e34fecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para processar comandos recebidos pela UART.  <a href="cmd_8h.html#acbda56739b42a3e0d02f7c2f6e34fecb">More...</a><br /></td></tr>
+<tr class="separator:acbda56739b42a3e0d02f7c2f6e34fecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67ae8a79a708a3c5471668bddbd16400"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a67ae8a79a708a3c5471668bddbd16400">rxChar</a> (unsigned char car)</td></tr>
 <tr class="memdesc:a67ae8a79a708a3c5471668bddbd16400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia um caractere para o buffer de recepção UART.  <a href="cmd_8h.html#a67ae8a79a708a3c5471668bddbd16400">More...</a><br /></td></tr>
 <tr class="separator:a67ae8a79a708a3c5471668bddbd16400"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,13 +150,13 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ae6c75dafeeb8601334ce3cbe089987dd"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ae6c75dafeeb8601334ce3cbe089987dd">UARTRxBuffer</a> [<a class="el" href="mock__cmd_8h.html#a7e4912ef6d5612f8ebca463ff206d9ce">UART_RX_SIZE</a>]</td></tr>
+<tr class="memitem:ae6c75dafeeb8601334ce3cbe089987dd"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ae6c75dafeeb8601334ce3cbe089987dd">UARTRxBuffer</a> [UART_RX_SIZE]</td></tr>
 <tr class="memdesc:ae6c75dafeeb8601334ce3cbe089987dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer de recepção UART.  <a href="cmd_8h.html#ae6c75dafeeb8601334ce3cbe089987dd">More...</a><br /></td></tr>
 <tr class="separator:ae6c75dafeeb8601334ce3cbe089987dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a823a4908418667c2d93e1c049a1795d9"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a823a4908418667c2d93e1c049a1795d9">rxBufLen</a></td></tr>
 <tr class="memdesc:a823a4908418667c2d93e1c049a1795d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprimento atual do buffer de recepção UART.  <a href="cmd_8h.html#a823a4908418667c2d93e1c049a1795d9">More...</a><br /></td></tr>
 <tr class="separator:a823a4908418667c2d93e1c049a1795d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7801926b7e176ac7223f324794874a2b"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a7801926b7e176ac7223f324794874a2b">UARTTxBuffer</a> [<a class="el" href="mock__cmd_8h.html#a7bd31e3844f5461db2cbe6d906ca4040">UART_TX_SIZE</a>]</td></tr>
+<tr class="memitem:a7801926b7e176ac7223f324794874a2b"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a7801926b7e176ac7223f324794874a2b">UARTTxBuffer</a> [UART_TX_SIZE]</td></tr>
 <tr class="memdesc:a7801926b7e176ac7223f324794874a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer de transmissão UART.  <a href="cmd_8h.html#a7801926b7e176ac7223f324794874a2b">More...</a><br /></td></tr>
 <tr class="separator:a7801926b7e176ac7223f324794874a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8ecfc303888ce93c420f8052dfca1ce"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ae8ecfc303888ce93c420f8052dfca1ce">txBufLen</a></td></tr>
@@ -162,165 +174,10 @@ Variables</h2></td></tr>
 </li>
 <li><dl class="section date"><dt>Date</dt><dd>2025/06/01</dd></dl>
 </li>
-<li><dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bug:</a></b></dt><dd>Desconhecidos</dd></dl>
+<li><dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Bug:</a></b></dt><dd>Desconhecidos</dd></dl>
 </li>
 </ul>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a6b20d41d6252e9871430c242cb1a56e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b20d41d6252e9871430c242cb1a56e7">&#9670;&nbsp;</a></span>BUFFER_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUFFER_SIZE&#160;&#160;&#160;20 	/* Maximum size of the history buffers */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7c05fea069d1051d1e81073d0aaa84c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c05fea069d1051d1e81073d0aaa84c5">&#9670;&nbsp;</a></span>CMD_CS_ERROR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_CS_ERROR&#160;&#160;&#160;-3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a58d9edeb01fa855cfc869904d55a3cb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58d9edeb01fa855cfc869904d55a3cb9">&#9670;&nbsp;</a></span>CMD_EMPTY_STRING</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_EMPTY_STRING&#160;&#160;&#160;-1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7cca5ff2d7daf092a74962a305d8c5c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cca5ff2d7daf092a74962a305d8c5c7">&#9670;&nbsp;</a></span>CMD_FRAMING_ERROR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_FRAMING_ERROR&#160;&#160;&#160;-5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a257cfa90b83ea92f857763aecd409836"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a257cfa90b83ea92f857763aecd409836">&#9670;&nbsp;</a></span>CMD_INVALID</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_INVALID&#160;&#160;&#160;-2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa2008c1bc36d9ef42571a6ec52516d02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2008c1bc36d9ef42571a6ec52516d02">&#9670;&nbsp;</a></span>CMD_SUCCESS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_SUCCESS&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ade39201a8e331bdd96c8377224ef6d1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade39201a8e331bdd96c8377224ef6d1f">&#9670;&nbsp;</a></span>CMD_WRONG_FORMAT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_WRONG_FORMAT&#160;&#160;&#160;-4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a29fd18bed01c4d836c7ebfe73a125c3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29fd18bed01c4d836c7ebfe73a125c3f">&#9670;&nbsp;</a></span>END</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define END&#160;&#160;&#160;'!'          /* End of Frame Symbol */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3018c7600b7bb9866400596a56a57af7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3018c7600b7bb9866400596a56a57af7">&#9670;&nbsp;</a></span>START</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define START&#160;&#160;&#160;'#'	        /* Start of Frame Symbol */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7e4912ef6d5612f8ebca463ff206d9ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e4912ef6d5612f8ebca463ff206d9ce">&#9670;&nbsp;</a></span>UART_RX_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UART_RX_SIZE&#160;&#160;&#160;20 	/* Maximum size of the RX buffer */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7bd31e3844f5461db2cbe6d906ca4040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bd31e3844f5461db2cbe6d906ca4040">&#9670;&nbsp;</a></span>UART_TX_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UART_TX_SIZE&#160;&#160;&#160;20 	/* Maximum size of the TX buffer */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a2a0e03d8d8ff0f0459f7623ffd6d39b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a0e03d8d8ff0f0459f7623ffd6d39b1">&#9670;&nbsp;</a></span>calcChecksum()</h2>
 
@@ -369,8 +226,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a073961baba82f2a2de88774870ab977b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a073961baba82f2a2de88774870ab977b">&#9670;&nbsp;</a></span>cmd()</h2>
+<a id="acbda56739b42a3e0d02f7c2f6e34fecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbda56739b42a3e0d02f7c2f6e34fecb">&#9670;&nbsp;</a></span>cmd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -378,9 +235,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int cmd </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>cmd_buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nchar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -644,7 +511,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned char UARTRxBuffer[<a class="el" href="mock__cmd_8h.html#a7e4912ef6d5612f8ebca463ff206d9ce">UART_RX_SIZE</a>]</td>
+          <td class="memname">unsigned char UARTRxBuffer[UART_RX_SIZE]</td>
         </tr>
       </table>
   </td>
@@ -673,7 +540,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned char UARTTxBuffer[<a class="el" href="mock__cmd_8h.html#a7bd31e3844f5461db2cbe6d906ca4040">UART_TX_SIZE</a>]</td>
+          <td class="memname">unsigned char UARTTxBuffer[UART_TX_SIZE]</td>
         </tr>
       </table>
   </td>
